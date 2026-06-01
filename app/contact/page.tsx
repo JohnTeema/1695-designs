@@ -27,7 +27,7 @@ export default function ContactPage() {
           <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
             Get in Touch
           </p>
-          <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.8rem,6vw,5rem)] leading-[1.05] max-w-2xl">
+          <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] max-w-2xl">
             Contact Us
           </h1>
         </Container>

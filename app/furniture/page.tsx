@@ -28,11 +28,11 @@ export default async function FurniturePage() {
           className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/80"
           aria-hidden="true"
         />
-        <div className="relative z-10 w-full mx-auto max-w-7xl px-6 md:px-10 lg:px-16 pb-16 md:pb-20 pt-36 md:pt-44">
+        <div className="relative z-10 w-full mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16 xl:px-20 pb-16 md:pb-20 pt-36 md:pt-44">
           <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
             Collection
           </p>
-          <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.8rem,6vw,5rem)] leading-[1.05] mb-6">
+          <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] mb-6">
             Furniture
           </h1>
           <p className="font-body text-stone text-lg max-w-xl">

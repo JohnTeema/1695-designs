@@ -9,7 +9,7 @@ export default function CTA() {
 
       <Container narrow>
         <div className="text-center">
-          <h2 className="font-heading font-semibold text-warm-white text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.05] mb-8">
+          <h2 className="font-heading font-semibold text-warm-white text-[clamp(2.2rem,4.5vw,4rem)] leading-[1.05] mb-8">
             Let&apos;s Build Your
             <br />
             Next Space.

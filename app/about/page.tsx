@@ -59,12 +59,12 @@ export default function AboutPage() {
           className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/80"
           aria-hidden="true"
         />
-        <div className="relative z-10 w-full mx-auto max-w-7xl px-6 md:px-10 lg:px-16 pb-20 md:pb-28 pt-40 md:pt-48">
+        <div className="relative z-10 w-full mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16 xl:px-20 pb-20 md:pb-28 pt-40 md:pt-48">
           <div className="max-w-3xl">
             <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-8">
               About 1695 Designs
             </p>
-            <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.2rem,5vw,4rem)] leading-[1.05] mb-8">
+            <h1 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] mb-8">
               We don&apos;t just design spaces. We shape how they are experienced.
             </h1>
             <p className="font-body text-stone text-lg leading-relaxed max-w-2xl">

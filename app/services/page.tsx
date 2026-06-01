@@ -187,12 +187,12 @@ export default function ServicesPage() {
           className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/80"
           aria-hidden="true"
         />
-        <div className="relative z-10 w-full mx-auto max-w-7xl px-6 md:px-10 lg:px-16 pb-20 md:pb-24 pt-40 md:pt-48">
+        <div className="relative z-10 w-full mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16 xl:px-20 pb-20 md:pb-24 pt-40 md:pt-48">
           <div className="max-w-3xl">
             <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
               Our Services
             </p>
-            <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.8rem,6vw,5rem)] leading-[1.05] mb-8">
+            <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] mb-8">
               Design. Craft. Deliver.
             </h1>
             <div className="space-y-4 font-body text-stone leading-relaxed max-w-2xl">
@@ -474,7 +474,7 @@ export default function ServicesPage() {
         <div className="absolute left-0 top-0 w-full h-px bg-gold/20" aria-hidden="true" />
         <Container narrow>
           <div className="text-center">
-            <h2 className="font-heading font-semibold text-warm-white text-[clamp(2.2rem,5vw,4rem)] leading-[1.05] mb-8">
+            <h2 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] mb-8">
               Ready to Transform Your Space?
             </h2>
             <p className="font-body text-grey leading-relaxed text-lg mb-12 max-w-2xl mx-auto">

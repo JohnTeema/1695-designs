@@ -9,13 +9,13 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Content */}
-      <div className="relative z-10 w-full mx-auto max-w-7xl px-6 md:px-10 lg:px-16 pb-20 md:pb-28">
+      {/* Content — aligned to the same container edge as every other section */}
+      <div className="relative z-10 w-full mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16 xl:px-20 pb-20 md:pb-28">
         <div className="max-w-2xl">
           <h1 className="font-heading font-semibold text-warm-white leading-[1.05] mb-8">
-            <span className="block text-[clamp(3rem,8vw,6rem)]">Design.</span>
-            <span className="block text-[clamp(3rem,8vw,6rem)]">Craft.</span>
-            <span className="block text-[clamp(3rem,8vw,6rem)]">Transform.</span>
+            <span className="block text-[clamp(2.8rem,5vw,5rem)]">Design.</span>
+            <span className="block text-[clamp(2.8rem,5vw,5rem)]">Craft.</span>
+            <span className="block text-[clamp(2.8rem,5vw,5rem)]">Transform.</span>
           </h1>
 
           <p className="font-body text-stone text-lg leading-relaxed mb-10 max-w-xl">
