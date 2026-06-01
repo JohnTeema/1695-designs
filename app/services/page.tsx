@@ -5,7 +5,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Complete interior solutions for corporate, hospitality, and residential environments — interior design, furniture manufacturing, furniture supply, and design & build.",
+    "Complete interior solutions — interior design, furniture manufacturing, furniture supply, and end-to-end design & build — for corporate, hospitality, and residential environments.",
+  openGraph: {
+    title: "Services | 1695 Designs",
+    description:
+      "Interior design, furniture manufacturing, furniture supply, and design & build solutions. We manage every stage from concept to handover.",
+  },
 };
 
 /* ─── Data (verbatim from services-copy.md) ─────────────────────────────── */

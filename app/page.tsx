@@ -12,7 +12,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "1695 Designs — Interior Design & Bespoke Furniture",
   description:
-    "Premium interior design and bespoke furniture studio creating corporate, hospitality, and residential spaces with precision and restraint.",
+    "1695 Designs is a premium interior design and furniture company creating functional, refined, and fully executed spaces for corporate and hospitality clients — from concept to completion.",
+  openGraph: {
+    title: "1695 Designs — Interior Design & Bespoke Furniture",
+    description:
+      "Premium interior design and furniture company creating functional, refined spaces for corporate and hospitality clients — from concept to completion.",
+  },
 };
 
 export default function HomePage() {

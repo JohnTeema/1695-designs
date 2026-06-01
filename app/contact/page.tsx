@@ -5,7 +5,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with 1695 Designs to discuss your interior design or furniture project.",
+    "Get in touch with 1695 Designs to discuss your interior design or furniture project. We respond to all inquiries within one business day.",
+  openGraph: {
+    title: "Contact 1695 Designs",
+    description:
+      "Let's discuss your project. Share your requirements and our team will get back to you within one business day.",
+  },
 };
 
 export default function ContactPage() {

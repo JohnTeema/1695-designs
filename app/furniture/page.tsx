@@ -9,7 +9,12 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Furniture",
   description:
-    "Custom-made and curated furniture for corporate, hospitality, and residential environments.",
+    "Custom-manufactured and curated furniture for corporate, hospitality, and residential environments. Designed and built to fit your specific space.",
+  openGraph: {
+    title: "Furniture Collection | 1695 Designs",
+    description:
+      "Custom-made and curated furniture pieces — office, hospitality, living, dining, and bedroom. Designed to complement complete interior projects.",
+  },
 };
 
 export default async function FurniturePage() {

@@ -21,7 +21,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = await client.fetch(productBySlugQuery, { slug }).catch(() => null);
   if (!product) return { title: "Product Not Found" };
-  return { title: product.title, description: product.description ?? undefined };
+  const ogImage = product.gallery?.[0]?.asset
+    ? { url: urlFor(product.gallery[0]).width(1200).height(630).url(), alt: product.title }
+    : { url: "/opengraph-image" };
+  const description = product.description ?? `Custom ${product.category} furniture by 1695 Designs.`;
+  return {
+    title: product.title,
+    description,
+    openGraph: { title: product.title, description, images: [ogImage] },
+  };
 }
 
 const categoryLabel: Record<string, string> = {

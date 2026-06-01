@@ -10,7 +10,13 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Insights on interior design, furniture, and creating spaces that perform.",
+  description:
+    "Insights on interior design, furniture manufacturing, and creating spaces that perform — from the 1695 Designs team.",
+  openGraph: {
+    title: "Blog | 1695 Designs",
+    description:
+      "Articles on interior design, bespoke furniture, and project delivery from the 1695 Designs studio.",
+  },
 };
 
 type Post = {

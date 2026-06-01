@@ -21,9 +21,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = await client.fetch(projectBySlugQuery, { slug }).catch(() => null);
   if (!project) return { title: "Project Not Found" };
+  const ogImage = project.images?.[0]?.asset
+    ? { url: urlFor(project.images[0]).width(1200).height(630).url(), alt: project.title }
+    : { url: "/opengraph-image" };
   return {
     title: project.title,
-    description: project.description ?? undefined,
+    description: project.description ?? `A ${project.category} interior design project by 1695 Designs.`,
+    openGraph: {
+      title: project.title,
+      description: project.description ?? `A ${project.category} interior design project by 1695 Designs.`,
+      images: [ogImage],
+    },
   };
 }
 

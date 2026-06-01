@@ -5,7 +5,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "1695 Designs is a premium interior design and furniture company focused on creating functional, refined, and purpose-driven environments for corporate and hospitality clients.",
+    "1695 Designs was founded on the belief that great spaces are not just designed — they are carefully crafted, built, and experienced. Interior design, furniture manufacturing, and supply under one roof.",
+  openGraph: {
+    title: "About 1695 Designs",
+    description:
+      "We bring interior design, furniture manufacturing, and furniture supply into one unified process — ensuring that what is imagined is exactly what is delivered.",
+  },
 };
 
 /* ─── Data ───────────────────────────────────────────────────────────────── */
