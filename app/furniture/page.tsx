@@ -1,24 +1,47 @@
+import { client } from "@/lib/sanity/client";
+import { allProductsQuery } from "@/lib/sanity/queries";
+import ProductGrid from "@/components/sections/ProductGrid";
 import Container from "@/components/ui/Container";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Furniture" };
+export const revalidate = 3600;
 
-export default function FurniturePage() {
+export const metadata: Metadata = {
+  title: "Furniture",
+  description:
+    "Custom-made and curated furniture for corporate, hospitality, and residential environments.",
+};
+
+export default async function FurniturePage() {
+  const products = await client.fetch(allProductsQuery).catch(() => []);
+
   return (
-    <div className="pt-20">
-      <section className="py-24 md:py-32">
-        <Container narrow>
+    <>
+      {/* Hero */}
+      <section className="relative min-h-[50vh] flex items-end bg-charcoal overflow-hidden">
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/80"
+          aria-hidden="true"
+        />
+        <div className="relative z-10 w-full mx-auto max-w-7xl px-6 md:px-10 lg:px-16 pb-16 md:pb-20 pt-36 md:pt-44">
           <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
             Collection
           </p>
-          <h1 className="font-heading font-semibold text-charcoal text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.05] mb-8">
+          <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.8rem,6vw,5rem)] leading-[1.05] mb-6">
             Furniture
           </h1>
-          <p className="font-body text-charcoal/70 leading-relaxed text-lg">
-            CMS-driven furniture catalog coming in Phase 2 (Sanity integration).
+          <p className="font-body text-stone text-lg max-w-xl">
+            Custom-manufactured and curated pieces designed for complete interior environments.
           </p>
+        </div>
+      </section>
+
+      {/* Products */}
+      <section className="py-20 md:py-28 bg-warm-white">
+        <Container>
+          <ProductGrid products={products} />
         </Container>
       </section>
-    </div>
+    </>
   );
 }
