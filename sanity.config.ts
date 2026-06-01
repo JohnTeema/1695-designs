@@ -11,6 +11,9 @@ export default defineConfig({
   name: "default",
   title: "1695 Designs",
 
+  // Must match the route the Studio is served from in Next.js
+  basePath: "/studio",
+
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "add-project-id",
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production",
 
