@@ -5,87 +5,178 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Interior design, furniture manufacturing, and furniture supply — end-to-end solutions for corporate and hospitality spaces.",
+    "Complete interior solutions for corporate, hospitality, and residential environments — interior design, furniture manufacturing, furniture supply, and design & build.",
 };
 
-/* ─── Data ───────────────────────────────────────────────────────────────── */
+/* ─── Data (verbatim from services-copy.md) ─────────────────────────────── */
 
-const services = [
-  {
-    number: "01",
-    title: "Interior Design",
-    description:
-      "We design functional and visually refined spaces for corporate offices, hospitality brands, and modern environments. Our work blends aesthetics with purpose to improve how people experience spaces.",
-    subServices: [
-      "Space Planning",
-      "Workplace Design",
-      "Hospitality Design",
-      "Interior Styling",
-      "3D Visualization",
-    ],
-  },
-  {
-    number: "02",
-    title: "Furniture Manufacturing",
-    description:
-      "We design and produce custom furniture tailored to each project. From office workspaces to hospitality interiors, we create pieces that combine durability, comfort, and design precision.",
-    subServices: [
-      "Custom Furniture",
-      "Office Furniture",
-      "Hospitality Furniture",
-      "Residential Furniture",
-    ],
-  },
-  {
-    number: "03",
-    title: "Furniture Supply",
-    description:
-      "We provide curated furniture solutions for complete interior projects, sourcing and supplying quality pieces that align with design intent and brand identity.",
-    subServices: [
-      "Imported Furniture",
-      "Local Furniture Collections",
-      "Turnkey Furnishing Solutions",
-    ],
-  },
+const interiorDesignServices = [
+  "Space Planning",
+  "Interior Concept Development",
+  "3D Visualization & Renderings",
+  "Workplace Design",
+  "Hospitality Design",
+  "Residential Interior Design",
+  "Material & Finish Selection",
+  "Furniture Specification",
+  "Design Documentation",
+  "Project Supervision",
 ];
 
-const processSteps = [
+const interiorDesignIdealFor = [
+  "Corporate Offices",
+  "Hotels",
+  "Restaurants",
+  "Lounges",
+  "Short-let Apartments",
+  "Commercial Developments",
+  "Luxury Residences",
+];
+
+const furnitureManufacturedItems = [
+  "Executive Desks",
+  "Reception Desks",
+  "Workstations",
+  "Conference Tables",
+  "Hospitality Furniture",
+  "Restaurant Furniture",
+  "Lounge Seating",
+  "Dining Sets",
+  "Beds & Wardrobes",
+  "Custom Storage Solutions",
+  "Built-in Joinery",
+  "Feature Furniture Pieces",
+];
+
+const whyCustomFurniture = [
+  "Tailored to your space",
+  "Better use of available dimensions",
+  "Consistent design language",
+  "Higher quality finishes",
+  "Long-term durability",
+];
+
+const furnitureSupplyProducts = [
+  "Office Furniture",
+  "Hospitality Furniture",
+  "Living Room Furniture",
+  "Dining Furniture",
+  "Bedroom Furniture",
+  "Decorative Lighting",
+  "Rugs & Floor Coverings",
+  "Wallpaper & Wall Finishes",
+  "Window Treatments",
+  "Decorative Accessories",
+  "Art & Styling Pieces",
+];
+
+const supplyAdvantages = [
+  "Access to trusted manufacturers",
+  "Quality assurance",
+  "Design-led product selection",
+  "Local and international sourcing options",
+  "Seamless integration with interior projects",
+];
+
+const designBuildSteps = [
   {
     number: "01",
-    title: "Discover",
-    description: "We understand your space, goals, and functional requirements.",
+    title: "Discovery",
+    description: "We assess your space, objectives, budget, and requirements.",
   },
   {
     number: "02",
-    title: "Design",
-    description: "We develop detailed concepts, layouts, and 3D visualizations.",
+    title: "Design Development",
+    description:
+      "We create concepts, layouts, visualizations, and specifications.",
   },
   {
     number: "03",
-    title: "Manufacture",
-    description: "We produce custom furniture tailored to your project needs.",
+    title: "Production & Procurement",
+    description: "Furniture manufacturing and material sourcing begin.",
   },
   {
     number: "04",
-    title: "Deliver",
-    description: "We execute and deliver fully completed interior spaces.",
+    title: "Installation & Execution",
+    description: "Our team oversees implementation and project delivery.",
+  },
+  {
+    number: "05",
+    title: "Project Handover",
+    description: "A fully completed space ready for use.",
   },
 ];
 
-const whyPoints = [
-  "One team from design to execution",
-  "Full control over furniture production",
-  "Consistency between concept and completion",
-  "Strong understanding of corporate and hospitality needs",
-  "A focus on long-term functionality, not just aesthetics",
+const whyChoose = [
+  {
+    title: "Integrated Expertise",
+    body: "Design, furniture manufacturing, and supply working together under one brand.",
+  },
+  {
+    title: "Quality Craftsmanship",
+    body: "Attention to detail from concept to completion.",
+  },
+  {
+    title: "Tailored Solutions",
+    body: "Every project is developed around your specific needs and objectives.",
+  },
+  {
+    title: "Reliable Delivery",
+    body: "Structured processes and execution-focused project management.",
+  },
+  {
+    title: "Design That Performs",
+    body: "Spaces that are not only beautiful but functional, efficient, and built to last.",
+  },
 ];
+
+/* ─── Shared sub-components ─────────────────────────────────────────────── */
+
+function ListBlock({
+  heading,
+  items,
+  light = false,
+}: {
+  heading: string;
+  items: string[];
+  light?: boolean;
+}) {
+  return (
+    <div>
+      <p
+        className={`text-[10px] tracking-[0.2em] uppercase font-body font-medium mb-4 ${
+          light ? "text-gold/80" : "text-grey"
+        }`}
+      >
+        {heading}
+      </p>
+      <ul className="space-y-2">
+        {items.map((item) => (
+          <li key={item} className="flex items-start gap-3">
+            <div
+              className="w-3 h-px bg-gold mt-[0.6em] shrink-0"
+              aria-hidden="true"
+            />
+            <span
+              className={`font-body text-sm leading-relaxed ${
+                light ? "text-stone" : "text-charcoal/75"
+              }`}
+            >
+              {item}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 /* ─── Page ───────────────────────────────────────────────────────────────── */
 
 export default function ServicesPage() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────────────────────── */}
+      {/* ── Hero / Page intro ────────────────────────────────────────────── */}
       <section className="relative min-h-[60vh] flex items-end bg-charcoal overflow-hidden">
         <div
           className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/80"
@@ -93,122 +184,279 @@ export default function ServicesPage() {
         />
         <div className="relative z-10 w-full mx-auto max-w-7xl px-6 md:px-10 lg:px-16 pb-20 md:pb-24 pt-40 md:pt-48">
           <div className="max-w-3xl">
-            <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-8">
+            <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
               Our Services
             </p>
-            <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] mb-8">
-              What We Do
+            <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.8rem,6vw,5rem)] leading-[1.05] mb-8">
+              Design. Craft. Deliver.
             </h1>
-            <p className="font-body text-stone text-lg leading-relaxed max-w-xl">
-              1695 Designs operates across three integrated areas — interior design,
-              furniture manufacturing, and furniture supply — delivering complete spaces
-              from concept to completion.
-            </p>
+            <div className="space-y-4 font-body text-stone leading-relaxed max-w-2xl">
+              <p>
+                At 1695 Designs, we provide complete interior solutions for corporate,
+                hospitality, and residential environments. By combining interior design,
+                furniture manufacturing, and furniture supply under one roof, we ensure
+                every project is delivered with consistency, quality, and attention to
+                detail.
+              </p>
+              <p>
+                Whether you are developing a new space, renovating an existing one, or
+                furnishing a completed project, our team works closely with you from
+                concept to completion.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Three Services ───────────────────────────────────────────────── */}
-      {services.map((service, i) => (
-        <section
-          key={service.number}
-          className={`py-24 md:py-32 ${i % 2 === 0 ? "bg-warm-white" : "bg-stone/20"}`}
-        >
-          <Container>
-            <div
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center ${
-                i % 2 !== 0 ? "lg:grid-flow-dense" : ""
-              }`}
-            >
-              {/* Text */}
-              <div className={i % 2 !== 0 ? "lg:col-start-1" : ""}>
-                <span className="text-[11px] tracking-[0.2em] font-body font-medium text-gold/80 block mb-4">
-                  {service.number}
-                </span>
-                <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1] mb-6">
-                  {service.title}
-                </h2>
-                <p className="font-body text-charcoal/70 leading-relaxed mb-10">
-                  {service.description}
-                </p>
-                <div>
-                  <p className="text-[10px] tracking-[0.2em] uppercase font-body text-grey mb-4">
-                    Includes
-                  </p>
-                  <ul className="space-y-0 divide-y divide-stone">
-                    {service.subServices.map((sub) => (
-                      <li key={sub} className="flex items-center gap-4 py-3">
-                        <div className="w-4 h-px bg-gold shrink-0" aria-hidden="true" />
-                        <span className="font-body text-charcoal/80 text-sm">{sub}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+      {/* ── Service 1 — Interior Design ──────────────────────────────────── */}
+      <section className="py-24 md:py-32 bg-warm-white">
+        <Container>
+          {/* Section header */}
+          <div className="flex items-start gap-6 mb-14">
+            <span className="font-heading text-5xl font-medium text-charcoal/10 leading-none mt-1 select-none">
+              01
+            </span>
+            <div>
+              <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
+                Interior Design
+              </h2>
+              <p className="font-body text-gold mt-2 tracking-wide">
+                Creating Spaces with Purpose
+              </p>
+            </div>
+          </div>
 
-              {/* Image placeholder */}
-              <div
-                className={`relative aspect-[4/3] bg-stone ${
-                  i % 2 !== 0 ? "lg:col-start-2" : ""
-                }`}
-              >
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-stone/40 to-charcoal/10"
-                  aria-hidden="true"
-                />
-                {i % 2 === 0 ? (
-                  <>
-                    <div className="absolute bottom-0 right-0 w-px h-16 bg-gold" aria-hidden="true" />
-                    <div className="absolute bottom-0 right-0 w-16 h-px bg-gold" aria-hidden="true" />
-                  </>
-                ) : (
-                  <>
-                    <div className="absolute top-0 left-0 w-px h-16 bg-gold" aria-hidden="true" />
-                    <div className="absolute top-0 left-0 w-16 h-px bg-gold" aria-hidden="true" />
-                  </>
-                )}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-[10px] tracking-[0.15em] uppercase font-body text-charcoal/30">
-                    Photography — Coming Soon
-                  </p>
-                </div>
+          {/* Body */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-14">
+            <div className="space-y-4 font-body text-charcoal/75 leading-relaxed">
+              <p>
+                Every successful space begins with thoughtful design. Our interior design
+                service goes beyond aesthetics to create environments that are functional,
+                efficient, and aligned with the needs of the people who use them. We take
+                time to understand your goals, operational requirements, brand identity, and
+                user experience before translating them into a well-executed design
+                solution.
+              </p>
+              <p>
+                From workplace environments that support productivity to hospitality spaces
+                that enhance guest experience, our approach combines creativity with
+                practical execution.
+              </p>
+            </div>
+
+            {/* Image placeholder */}
+            <div className="relative aspect-[4/3] bg-stone">
+              <div className="absolute top-0 right-0 w-px h-16 bg-gold" aria-hidden="true" />
+              <div className="absolute top-0 right-0 w-16 h-px bg-gold" aria-hidden="true" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-[10px] tracking-[0.15em] uppercase font-body text-charcoal/30">
+                  Photography — Coming Soon
+                </p>
               </div>
             </div>
-          </Container>
-        </section>
-      ))}
+          </div>
 
-      {/* ── How We Work ──────────────────────────────────────────────────── */}
+          {/* Lists */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-stone pt-12">
+            <ListBlock
+              heading="Our Interior Design Services Include"
+              items={interiorDesignServices}
+            />
+            <ListBlock heading="Ideal For" items={interiorDesignIdealFor} />
+          </div>
+        </Container>
+      </section>
+
+      {/* ── Service 2 — Furniture Manufacturing ──────────────────────────── */}
+      <section className="py-24 md:py-32 bg-stone/20">
+        <Container>
+          <div className="flex items-start gap-6 mb-14">
+            <span className="font-heading text-5xl font-medium text-charcoal/10 leading-none mt-1 select-none">
+              02
+            </span>
+            <div>
+              <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
+                Furniture Manufacturing
+              </h2>
+              <p className="font-body text-gold mt-2 tracking-wide">
+                Custom Furniture Built for Your Space
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-14">
+            {/* Image placeholder */}
+            <div className="relative aspect-[4/3] bg-stone order-2 lg:order-1">
+              <div className="absolute bottom-0 left-0 w-px h-16 bg-gold" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 w-16 h-px bg-gold" aria-hidden="true" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-[10px] tracking-[0.15em] uppercase font-body text-charcoal/30">
+                  Photography — Coming Soon
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-4 font-body text-charcoal/75 leading-relaxed order-1 lg:order-2">
+              <p>
+                Great spaces deserve furniture that fits perfectly. Our furniture
+                manufacturing division produces custom-made pieces designed to complement
+                each project&apos;s unique requirements. By controlling the production
+                process, we are able to ensure superior quality, better design consistency,
+                and greater flexibility than off-the-shelf alternatives.
+              </p>
+              <p>Every piece is designed with durability, comfort, and craftsmanship in mind.</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-stone pt-12">
+            <ListBlock heading="What We Manufacture" items={furnitureManufacturedItems} />
+            <ListBlock heading="Why Custom Furniture?" items={whyCustomFurniture} />
+          </div>
+        </Container>
+      </section>
+
+      {/* ── Service 3 — Furniture Supply ─────────────────────────────────── */}
+      <section className="py-24 md:py-32 bg-warm-white">
+        <Container>
+          <div className="flex items-start gap-6 mb-14">
+            <span className="font-heading text-5xl font-medium text-charcoal/10 leading-none mt-1 select-none">
+              03
+            </span>
+            <div>
+              <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
+                Furniture Supply
+              </h2>
+              <p className="font-body text-gold mt-2 tracking-wide">
+                Curated Furniture & Interior Solutions
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-14">
+            <div className="space-y-4 font-body text-charcoal/75 leading-relaxed">
+              <p>
+                We source and supply carefully selected furniture, décor, and interior
+                accessories that complete and elevate your space. Our extensive supplier
+                network allows us to provide clients with furniture solutions that align
+                with their project goals, budget, and aesthetic preferences.
+              </p>
+              <p>
+                Whether furnishing an executive office, hotel suite, restaurant, or private
+                residence, we ensure every piece contributes to a cohesive and functional
+                environment.
+              </p>
+            </div>
+
+            {/* Image placeholder */}
+            <div className="relative aspect-[4/3] bg-stone">
+              <div className="absolute top-0 right-0 w-px h-16 bg-gold" aria-hidden="true" />
+              <div className="absolute top-0 right-0 w-16 h-px bg-gold" aria-hidden="true" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-[10px] tracking-[0.15em] uppercase font-body text-charcoal/30">
+                  Photography — Coming Soon
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-stone pt-12">
+            <ListBlock heading="Products We Supply" items={furnitureSupplyProducts} />
+            <ListBlock heading="Our Supply Advantage" items={supplyAdvantages} />
+          </div>
+        </Container>
+      </section>
+
+      {/* ── Service 4 — Design & Build ───────────────────────────────────── */}
       <section className="py-24 md:py-32 bg-charcoal">
         <Container>
-          <div className="max-w-xl mb-16 md:mb-20">
-            <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
-              Our Process
+          <div className="flex items-start gap-6 mb-14">
+            <span className="font-heading text-5xl font-medium text-warm-white/10 leading-none mt-1 select-none">
+              04
+            </span>
+            <div>
+              <h2 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
+                Design & Build Solutions
+              </h2>
+              <p className="font-body text-gold mt-2 tracking-wide">
+                End-to-End Project Delivery
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+            {/* Image placeholder */}
+            <div className="relative aspect-[4/3] bg-charcoal/50 border border-white/10">
+              <div className="absolute bottom-0 right-0 w-px h-16 bg-gold" aria-hidden="true" />
+              <div className="absolute bottom-0 right-0 w-16 h-px bg-gold" aria-hidden="true" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-[10px] tracking-[0.15em] uppercase font-body text-white/20">
+                  Photography — Coming Soon
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-4 font-body text-stone leading-relaxed">
+              <p>
+                For clients seeking a seamless experience, we offer complete design and
+                build services. From initial design concepts to furniture production,
+                procurement, installation, and project handover, we manage every stage of
+                the process.
+              </p>
+              <p>
+                This integrated approach reduces coordination challenges, improves quality
+                control, and ensures the final outcome remains true to the original vision.
+              </p>
+            </div>
+          </div>
+
+          {/* 5-step process */}
+          <div className="border-t border-white/10 pt-12">
+            <p className="text-[10px] tracking-[0.2em] uppercase font-body font-medium text-gold/80 mb-8">
+              Our Design & Build Process
             </p>
-            <h2 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
-              How We Work
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-0 border border-white/10">
+              {designBuildSteps.map((step, i) => (
+                <div
+                  key={step.number}
+                  className={`p-6 md:p-8 ${i < 4 ? "md:border-r border-white/10" : ""} border-b md:border-b-0 border-white/10 last:border-b-0`}
+                >
+                  <span className="font-heading text-3xl font-medium text-warm-white/15 block mb-4 select-none">
+                    {step.number}
+                  </span>
+                  <h3 className="font-heading font-medium text-warm-white text-base mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="font-body text-grey text-xs leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── Why Clients Choose 1695 Designs ──────────────────────────────── */}
+      <section className="py-24 md:py-32 bg-warm-white">
+        <Container>
+          <div className="max-w-xl mb-16">
+            <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
+              Why Clients Choose 1695 Designs
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-white/10">
-            {processSteps.map((step, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5">
+            {whyChoose.map((point) => (
               <div
-                key={step.number}
-                className={`p-10 md:p-12 ${
-                  i % 2 === 0 ? "md:border-r border-white/10" : ""
-                } ${i < 2 ? "border-b border-white/10" : ""}`}
+                key={point.title}
+                className="p-8 md:p-10 border border-stone hover:border-gold/40 transition-colors duration-300"
               >
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="font-heading text-5xl font-medium text-warm-white/10">
-                    {step.number}
-                  </span>
-                  <div className="h-px flex-1 bg-gold/30" aria-hidden="true" />
-                </div>
-                <h3 className="font-heading font-semibold text-warm-white text-2xl mb-4">
-                  {step.title}
+                <div className="w-6 h-px bg-gold mb-6" aria-hidden="true" />
+                <h3 className="font-heading font-medium text-charcoal text-xl mb-3">
+                  {point.title}
                 </h3>
-                <p className="font-body text-grey leading-relaxed">
-                  {step.description}
+                <p className="font-body text-charcoal/70 text-sm leading-relaxed">
+                  {point.body}
                 </p>
               </div>
             ))}
@@ -216,71 +464,27 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* ── Why Clients Choose Us ────────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-warm-white">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
-                Why 1695 Designs
-              </p>
-              <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1] mb-6">
-                A unified process. A consistent result.
-              </h2>
-              <p className="font-body text-charcoal/70 leading-relaxed">
-                What makes us different is not just what we design but how we deliver it.
-              </p>
-            </div>
-
-            <div>
-              <ul className="space-y-0 divide-y divide-stone mb-10">
-                {whyPoints.map((point) => (
-                  <li key={point} className="flex items-center gap-5 py-5">
-                    <div className="w-5 h-px bg-gold shrink-0" aria-hidden="true" />
-                    <span className="font-body text-charcoal/80">{point}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="space-y-1">
-                <p className="font-body font-medium text-charcoal">
-                  We don&apos;t just create interiors.
-                </p>
-                <p className="font-body text-charcoal/70">
-                  We deliver complete environments.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* ── CTA ──────────────────────────────────────────────────────────── */}
+      {/* ── Closing CTA ──────────────────────────────────────────────────── */}
       <section className="py-24 md:py-32 bg-charcoal relative overflow-hidden">
         <div className="absolute left-0 top-0 w-full h-px bg-gold/20" aria-hidden="true" />
         <Container narrow>
           <div className="text-center">
             <h2 className="font-heading font-semibold text-warm-white text-[clamp(2.2rem,5vw,4rem)] leading-[1.05] mb-8">
-              Let&apos;s discuss your project.
+              Ready to Transform Your Space?
             </h2>
-            <p className="font-body text-grey leading-relaxed text-lg mb-12 max-w-lg mx-auto">
-              Share your requirements and our team will get in touch with you.
+            <p className="font-body text-grey leading-relaxed text-lg mb-12 max-w-2xl mx-auto">
+              Whether you are designing a corporate headquarters, furnishing a hospitality
+              project, or creating a unique interior environment, 1695 Designs is ready to
+              bring your vision to life. Let&apos;s create a space that reflects your ambition,
+              enhances experience, and stands the test of time.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="/contact"
-                variant="outline"
-                className="border-warm-white text-warm-white hover:border-gold hover:text-gold"
-              >
-                Request a Consultation
-              </Button>
-              <Button
-                href="/contact"
-                variant="ghost"
-                className="text-stone hover:text-gold"
-              >
-                Start Your Project →
-              </Button>
-            </div>
+            <Button
+              href="/contact"
+              variant="outline"
+              className="border-warm-white text-warm-white hover:border-gold hover:text-gold"
+            >
+              Request a Consultation
+            </Button>
           </div>
         </Container>
       </section>
