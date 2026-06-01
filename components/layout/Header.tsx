@@ -27,10 +27,9 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // On the homepage, the header sits over a dark hero — use light text until scrolled.
-  // On all other pages, use charcoal text from the start.
-  const isHome = pathname === "/";
-  const useLightText = isHome && !scrolled;
+  // These pages open with a full-bleed dark hero — use light text until scrolled.
+  const darkHeroPages = ["/", "/about", "/services"];
+  const useLightText = darkHeroPages.includes(pathname) && !scrolled;
 
   return (
     <header
