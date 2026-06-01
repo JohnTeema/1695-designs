@@ -102,22 +102,23 @@ export async function submitInquiry(formData: FormData): Promise<InquiryResult> 
   }
 
   // ── Guard: skip sending if Resend isn't configured yet ───────────────────
-  if (!process.env.RESEND_API_KEY || !process.env.INQUIRY_TO_EMAIL) {
-    // Log so it's visible in the dev console; still succeeds so the form UX works
+  // Trim all env vars — .env.local values sometimes have accidental leading spaces
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  const toEmail = process.env.INQUIRY_TO_EMAIL?.trim();
+  const fromAddress = (process.env.INQUIRY_FROM_EMAIL?.trim()) ?? "1695 Designs <onboarding@resend.dev>";
+
+  if (!apiKey || !toEmail) {
     console.warn("[submit-inquiry] RESEND_API_KEY or INQUIRY_TO_EMAIL not set — skipping send.");
     return { success: true };
   }
 
   // ── Send via Resend ───────────────────────────────────────────────────────
-  const resend = new Resend(process.env.RESEND_API_KEY);
-
-  const fromAddress =
-    process.env.INQUIRY_FROM_EMAIL ?? "1695 Designs <onboarding@resend.dev>";
+  const resend = new Resend(apiKey);
 
   try {
     const { error } = await resend.emails.send({
       from: fromAddress,
-      to: [process.env.INQUIRY_TO_EMAIL],
+      to: [toEmail],
       replyTo: email,
       subject: `New Project Inquiry — ${name}`,
       html: emailHtml({ name, email, phone, projectType, message }),
