@@ -1,67 +1,38 @@
 import Container from "@/components/ui/Container";
 
-const reasons = [
-  {
-    title: "Precision over excess",
-    description:
-      "We design less, but better. Every element earns its place. No unnecessary ornamentation — only details that strengthen the whole.",
-  },
-  {
-    title: "In-house fabrication",
-    description:
-      "Our furniture is designed and built by us, not sourced from catalogues. Custom dimensions, materials, and finishes as standard.",
-  },
-  {
-    title: "End-to-end delivery",
-    description:
-      "One studio, one point of contact. We manage design, procurement, fabrication, and installation so nothing falls through the gap.",
-  },
-  {
-    title: "Sector expertise",
-    description:
-      "Corporate, hospitality, residential, and retail. We understand what makes each context different — and design accordingly.",
-  },
-  {
-    title: "Long-term partnerships",
-    description:
-      "Most of our clients return. We take that as the only measure that matters. Good work is the business development strategy.",
-  },
-  {
-    title: "Transparent process",
-    description:
-      "Detailed documentation at every phase. You always know where the project is, what decisions are pending, and what's coming next.",
-  },
+const points = [
+  "End-to-end interior solutions",
+  "Strong design + manufacturing capability",
+  "Corporate and hospitality expertise",
+  "Detail-driven execution",
+  "Functional and timeless design approach",
+  "Reliable project delivery",
 ];
 
 export default function WhyUs() {
   return (
     <section id="why-us" className="py-24 md:py-32 bg-charcoal">
       <Container>
-        {/* Header */}
-        <div className="max-w-xl mb-16 md:mb-20">
-          <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
-            Why Choose Us
-          </p>
-          <h2 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
-            Design is a decision.
-            <br />
-            Make the right one.
-          </h2>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Heading */}
+          <div>
+            <h2 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
+              Why 1695 Designs
+            </h2>
+            <p className="font-body text-grey mt-6 leading-relaxed">
+              What makes us different is not just what we design but how we deliver it.
+            </p>
+          </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
-          {reasons.map((reason, i) => (
-            <div key={i} className="group">
-              <div className="w-8 h-px bg-gold mb-6" aria-hidden="true" />
-              <h3 className="font-heading font-medium text-warm-white text-xl mb-3 group-hover:text-gold transition-colors duration-300">
-                {reason.title}
-              </h3>
-              <p className="font-body text-grey text-sm leading-relaxed">
-                {reason.description}
-              </p>
-            </div>
-          ))}
+          {/* Points */}
+          <ul className="space-y-0 divide-y divide-white/8">
+            {points.map((point) => (
+              <li key={point} className="flex items-center gap-5 py-5">
+                <div className="w-5 h-px bg-gold shrink-0" aria-hidden="true" />
+                <span className="font-body text-stone text-sm">{point}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </Container>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -17,12 +18,19 @@ const navLinks = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // On the homepage, the header sits over a dark hero — use light text until scrolled.
+  // On all other pages, use charcoal text from the start.
+  const isHome = pathname === "/";
+  const useLightText = isHome && !scrolled;
 
   return (
     <header
@@ -39,10 +47,18 @@ export default function Header() {
           className="flex flex-col leading-none group"
           onClick={() => setOpen(false)}
         >
-          <span className="font-heading text-2xl font-semibold text-charcoal tracking-wide">
+          <span
+            className={`font-heading text-2xl font-semibold tracking-wide transition-colors duration-500 ${
+              useLightText ? "text-warm-white" : "text-charcoal"
+            }`}
+          >
             1695
           </span>
-          <span className="text-[10px] tracking-[0.3em] text-grey uppercase font-body">
+          <span
+            className={`text-[10px] tracking-[0.3em] uppercase font-body transition-colors duration-500 ${
+              useLightText ? "text-stone" : "text-grey"
+            }`}
+          >
             Designs
           </span>
         </Link>
@@ -53,7 +69,9 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[11px] tracking-[0.18em] uppercase font-body font-medium text-charcoal hover:text-gold transition-colors duration-300"
+              className={`text-[11px] tracking-[0.18em] uppercase font-body font-medium hover:text-gold transition-colors duration-300 ${
+                useLightText ? "text-stone" : "text-charcoal"
+              }`}
             >
               {link.label}
             </Link>
@@ -62,7 +80,9 @@ export default function Header() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-charcoal hover:text-gold transition-colors"
+          className={`md:hidden transition-colors hover:text-gold ${
+            useLightText ? "text-warm-white" : "text-charcoal"
+          }`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -70,7 +90,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile nav */}
+      {/* Mobile nav — always on light background */}
       {open && (
         <div className="md:hidden bg-warm-white border-t border-stone">
           <nav className="flex flex-col px-6 py-6 gap-5">

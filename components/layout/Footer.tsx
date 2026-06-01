@@ -25,8 +25,9 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-grey text-sm font-body leading-relaxed max-w-xs">
-              Spaces that speak before anyone enters. Interior design and bespoke
-              furniture for those who demand precision.
+              1695 Designs is a premium interior design and furniture company delivering
+              functional, refined, and fully executed spaces for corporate and hospitality
+              clients — from concept to completion.
             </p>
           </div>
 

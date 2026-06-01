@@ -8,17 +8,12 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Text */}
           <div>
-            <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
-              Contact
-            </p>
             <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1] mb-8">
-              Come with a brief
-              <br />
-              or just an idea.
+              Contact Us
             </h2>
             <p className="font-body text-charcoal/70 leading-relaxed mb-10">
-              Every project starts with a conversation. Tell us about your space,
-              your timeline, and what you&apos;re trying to achieve. We&apos;ll take it from there.
+              Let&apos;s discuss your project. Share your requirements and our team will
+              get in touch with you.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-4">
@@ -50,15 +45,14 @@ export default function Contact() {
               Ready to get started?
             </h3>
             <p className="font-body text-grey text-sm leading-relaxed mb-8">
-              Fill out our project enquiry form and we&apos;ll respond within one business
-              day with initial thoughts and next steps.
+              Fill out our project enquiry form and we&apos;ll get in touch with you.
             </p>
             <Button
               href="/contact"
               variant="outline"
               className="border-stone text-stone hover:border-gold hover:text-gold w-full sm:w-auto"
             >
-              Project Enquiry Form
+              Send Inquiry
             </Button>
           </div>
         </div>
