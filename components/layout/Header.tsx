@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -27,8 +28,19 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // These pages open with a full-bleed dark hero — use light text until scrolled.
-  const darkHeroPages = ["/", "/about", "/services"];
+  // These pages open with a dark (charcoal) hero/top section — use light header
+  // text/label until scrolled, so the logo and nav stay legible over the dark band.
+  // (Detail pages like /portfolio/[slug] sit over a light bg behind the header,
+  //  so they keep charcoal text via the exact-match exclusion.)
+  const darkHeroPages = [
+    "/",
+    "/about",
+    "/services",
+    "/portfolio",
+    "/furniture",
+    "/blog",
+    "/contact",
+  ];
   const useLightText = darkHeroPages.includes(pathname) && !scrolled;
 
   return (
@@ -40,25 +52,36 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto w-full max-w-site px-6 md:px-10 lg:px-16 xl:px-20 flex items-center justify-between h-20">
-        {/* Logo */}
+        {/* Logo — icon mark (transparent, works on dark + light) + text label */}
         <Link
           href="/"
-          className="flex flex-col leading-none group"
+          className="flex items-center gap-3 group"
           onClick={() => setOpen(false)}
+          aria-label="1695 Designs — home"
         >
-          <span
-            className={`font-heading text-2xl font-semibold tracking-wide transition-colors duration-500 ${
-              useLightText ? "text-warm-white" : "text-charcoal"
-            }`}
-          >
-            1695
-          </span>
-          <span
-            className={`text-[10px] tracking-[0.3em] uppercase font-body transition-colors duration-500 ${
-              useLightText ? "text-stone" : "text-grey"
-            }`}
-          >
-            Designs
+          <Image
+            src="/1695-logo-icon-transparent.png"
+            alt="1695 Designs"
+            width={42}
+            height={41}
+            priority
+            className="h-10 w-auto"
+          />
+          <span className="flex flex-col leading-none">
+            <span
+              className={`font-heading text-xl font-semibold tracking-wide transition-colors duration-500 ${
+                useLightText ? "text-warm-white" : "text-charcoal"
+              }`}
+            >
+              1695
+            </span>
+            <span
+              className={`text-[9px] tracking-[0.3em] uppercase font-body transition-colors duration-500 ${
+                useLightText ? "text-stone" : "text-grey"
+              }`}
+            >
+              Designs
+            </span>
           </span>
         </Link>
 

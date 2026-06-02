@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 
 const navLinks = [
@@ -16,13 +17,17 @@ export default function Footer() {
       <Container>
         {/* Top */}
         <div className="py-16 border-b border-white/10 grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand */}
+          {/* Brand — full logo (dark wordmark) on a warm-white panel so it
+              stays legible on the charcoal footer */}
           <div>
-            <div className="mb-4">
-              <span className="font-heading text-3xl font-semibold tracking-wide">1695</span>
-              <span className="block text-[10px] tracking-[0.3em] text-grey uppercase font-body mt-0.5">
-                Designs
-              </span>
+            <div className="mb-6 inline-block bg-warm-white rounded-md p-4">
+              <Image
+                src="/1695-logo-full-transparent.png"
+                alt="1695 Designs"
+                width={150}
+                height={168}
+                className="h-auto w-[130px] md:w-[150px]"
+              />
             </div>
             <p className="text-grey text-sm font-body leading-relaxed max-w-xs">
               1695 Designs is a premium interior design and furniture company delivering
