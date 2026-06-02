@@ -7,7 +7,12 @@ import WhyUs from "@/components/sections/WhyUs";
 import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
 import Contact from "@/components/sections/Contact";
+import { client } from "@/lib/sanity/client";
+import { featuredProjectsQuery, siteSettingsQuery } from "@/lib/sanity/queries";
 import type { Metadata } from "next";
+
+// ISR — homepage imagery/projects refresh on the same cadence as the CMS pages
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "1695 Designs — Interior Design & Bespoke Furniture",
@@ -20,14 +25,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [featuredProjects, settings] = await Promise.all([
+    client.fetch(featuredProjectsQuery).catch(() => []),
+    client.fetch(siteSettingsQuery).catch(() => null),
+  ]);
+
   return (
     <>
-      <Hero />
-      <About />
+      <Hero heroImages={settings?.heroImages ?? []} />
+      <About aboutImage={settings?.aboutImage ?? null} />
       <Services />
       <Process />
-      <PortfolioTeaser />
+      <PortfolioTeaser projects={featuredProjects ?? []} />
       <WhyUs />
       <Testimonials />
       <CTA />

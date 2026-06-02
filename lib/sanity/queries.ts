@@ -144,6 +144,8 @@ export const siteSettingsQuery = groq`
     whatsappNumber,
     instagramUrl,
     linkedinUrl,
-    facebookUrl
+    facebookUrl,
+    heroImages[]{ ..., "alt": alt },
+    aboutImage
   }
 `;

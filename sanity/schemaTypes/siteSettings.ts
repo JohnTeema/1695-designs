@@ -7,6 +7,44 @@ export const siteSettings = defineType({
   // Singleton — only one document of this type should ever exist
   fields: [
     defineField({
+      name: "heroImages",
+      title: "Homepage Hero Image(s)",
+      type: "array",
+      description:
+        "Add 1 image for a calm, static hero background. Add 2–3 for a slow, subtle crossfade (~5s each). Leave empty to keep the plain dark background. Use large, high-quality landscape photography.",
+      validation: (r) => r.max(3),
+      of: [
+        {
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alt text",
+              validation: (r) => r.required(),
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: "aboutImage",
+      title: "Homepage About Image",
+      type: "image",
+      description:
+        "Portrait-oriented image shown beside the About text on the homepage.",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alt text",
+          validation: (r) => r.required(),
+        },
+      ],
+    }),
+    defineField({
       name: "phone",
       title: "Phone Number",
       type: "string",

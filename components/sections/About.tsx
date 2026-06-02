@@ -1,5 +1,7 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
+import { urlFor } from "@/lib/sanity/image";
 
 const highlights = [
   "Interior Design",
@@ -8,22 +10,38 @@ const highlights = [
   "End-to-end project delivery",
 ];
 
-export default function About() {
+type SanityImage = { asset?: { _ref: string }; alt?: string };
+
+export default function About({ aboutImage }: { aboutImage?: SanityImage | null }) {
+  const hasImage = Boolean(aboutImage?.asset);
+
   return (
     <section id="about" className="py-24 md:py-32 bg-warm-white">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Image placeholder */}
-          <div className="relative aspect-[4/5] bg-stone order-2 lg:order-1">
-            <div
-              className="absolute inset-0 bg-gradient-to-br from-stone/60 to-charcoal/10"
-              aria-hidden="true"
-            />
-            <div className="absolute bottom-6 left-6 right-6">
-              <p className="text-[10px] tracking-[0.2em] uppercase font-body text-grey">
-                Photography — Coming Soon
-              </p>
-            </div>
+          {/* Image — from CMS, with a tasteful placeholder fallback */}
+          <div className="relative aspect-[4/5] bg-stone order-2 lg:order-1 overflow-hidden">
+            {hasImage ? (
+              <Image
+                src={urlFor(aboutImage!).width(900).height(1125).quality(80).url()}
+                alt={aboutImage!.alt ?? "1695 Designs interior project"}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            ) : (
+              <>
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-stone/60 to-charcoal/10"
+                  aria-hidden="true"
+                />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-[10px] tracking-[0.2em] uppercase font-body text-grey">
+                    Photography — Coming Soon
+                  </p>
+                </div>
+              </>
+            )}
             <div className="absolute top-0 left-0 w-px h-24 bg-gold" aria-hidden="true" />
             <div className="absolute top-0 left-0 w-24 h-px bg-gold" aria-hidden="true" />
           </div>

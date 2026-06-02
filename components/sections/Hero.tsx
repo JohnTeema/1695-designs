@@ -1,11 +1,32 @@
 import Button from "@/components/ui/Button";
+import HeroBackground from "@/components/sections/HeroBackground";
+import { urlFor } from "@/lib/sanity/image";
 
-export default function Hero() {
+type SanityImage = { asset?: { _ref: string }; alt?: string };
+
+export default function Hero({ heroImages = [] }: { heroImages?: SanityImage[] }) {
+  const images = heroImages
+    .filter((img) => img?.asset)
+    .map((img) => ({
+      url: urlFor(img).width(2000).quality(80).url(),
+      alt: img.alt ?? "1695 Designs interior project",
+    }));
+
+  const hasImages = images.length > 0;
+
   return (
     <section className="relative min-h-screen flex items-end bg-charcoal overflow-hidden">
-      {/* Image placeholder — replace with next/image in Phase 2 */}
+      {/* CMS hero photography (calm static image, or slow crossfade for 2–3) */}
+      {hasImages && <HeroBackground images={images} />}
+
+      {/* Dark overlay — keeps white text readable over any photo.
+          When no image is set, this is the clean dark background. */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/90 to-charcoal/70"
+        className={
+          hasImages
+            ? "absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/70 to-charcoal/40"
+            : "absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/90 to-charcoal/70"
+        }
         aria-hidden="true"
       />
 
