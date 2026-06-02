@@ -43,9 +43,10 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator — left side to avoid WhatsApp button collision */}
-      <div className="absolute bottom-8 left-8 md:left-16 hidden md:flex flex-col items-center gap-3 z-10">
-        <div className="w-px h-16 bg-gold/40" aria-hidden="true" />
+      {/* Scroll indicator — bottom-left corner; short line + tucked low so it
+          clears the CTA buttons above it. Left of the WhatsApp button. */}
+      <div className="absolute bottom-6 left-6 md:left-10 hidden md:flex flex-col items-center gap-2 z-10">
+        <div className="w-px h-8 bg-gold/40" aria-hidden="true" />
         <span className="text-[10px] tracking-[0.2em] uppercase text-grey font-body">
           Scroll
         </span>
