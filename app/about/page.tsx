@@ -1,6 +1,11 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import CmsImage from "@/components/ui/CmsImage";
+import { client } from "@/lib/sanity/client";
+import { pageImagesQuery } from "@/lib/sanity/queries";
 import type { Metadata } from "next";
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "About",
@@ -50,7 +55,9 @@ const whyPoints = [
 
 /* ─── Page ───────────────────────────────────────────────────────────────── */
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const images = await client.fetch(pageImagesQuery).catch(() => null);
+
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
@@ -80,19 +87,20 @@ export default function AboutPage() {
       <section className="py-24 md:py-32 bg-warm-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            {/* Image placeholder */}
-            <div className="relative aspect-[4/5] bg-stone">
+            {/* Our Story image — from CMS, placeholder fallback */}
+            <div className="relative aspect-[4/5] bg-stone overflow-hidden">
               <div
                 className="absolute inset-0 bg-gradient-to-br from-stone/60 to-charcoal/10"
                 aria-hidden="true"
               />
-              <div className="absolute top-0 left-0 w-px h-24 bg-gold" aria-hidden="true" />
-              <div className="absolute top-0 left-0 w-24 h-px bg-gold" aria-hidden="true" />
-              <div className="absolute bottom-6 left-6">
-                <p className="text-[10px] tracking-[0.2em] uppercase font-body text-grey">
-                  Photography — Coming Soon
-                </p>
-              </div>
+              <CmsImage
+                image={images?.aboutStoryImage}
+                fallbackAlt="1695 Designs interior project"
+                width={900}
+                height={1125}
+              />
+              <div className="absolute top-0 left-0 w-px h-24 bg-gold z-10" aria-hidden="true" />
+              <div className="absolute top-0 left-0 w-24 h-px bg-gold z-10" aria-hidden="true" />
             </div>
 
             {/* Text */}
@@ -183,6 +191,21 @@ export default function AboutPage() {
               <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
                 Design is only complete when it is built
               </h2>
+
+              {/* Optional supporting image — only shows when set in the CMS */}
+              {images?.aboutApproachImage?.asset && (
+                <div className="relative aspect-[4/3] bg-stone overflow-hidden mt-10">
+                  <CmsImage
+                    image={images.aboutApproachImage}
+                    fallbackAlt="1695 Designs interior project"
+                    width={800}
+                    height={600}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute bottom-0 right-0 w-px h-16 bg-gold z-10" aria-hidden="true" />
+                  <div className="absolute bottom-0 right-0 w-16 h-px bg-gold z-10" aria-hidden="true" />
+                </div>
+              )}
             </div>
 
             <div>

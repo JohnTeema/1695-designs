@@ -1,6 +1,11 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import CmsImage from "@/components/ui/CmsImage";
+import { client } from "@/lib/sanity/client";
+import { pageImagesQuery } from "@/lib/sanity/queries";
 import type { Metadata } from "next";
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Services",
@@ -178,7 +183,9 @@ function ListBlock({
 
 /* ─── Page ───────────────────────────────────────────────────────────────── */
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const images = await client.fetch(pageImagesQuery).catch(() => null);
+
   return (
     <>
       {/* ── Hero / Page intro ────────────────────────────────────────────── */}
@@ -249,15 +256,16 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            {/* Image placeholder */}
-            <div className="relative aspect-[4/3] bg-stone">
-              <div className="absolute top-0 right-0 w-px h-16 bg-gold" aria-hidden="true" />
-              <div className="absolute top-0 right-0 w-16 h-px bg-gold" aria-hidden="true" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-[10px] tracking-[0.15em] uppercase font-body text-charcoal/30">
-                  Photography — Coming Soon
-                </p>
-              </div>
+            {/* Interior Design image — from CMS, placeholder fallback */}
+            <div className="relative aspect-[4/3] bg-stone overflow-hidden">
+              <CmsImage
+                image={images?.interiorDesignImage}
+                fallbackAlt="Interior design by 1695 Designs"
+                width={800}
+                height={600}
+              />
+              <div className="absolute top-0 right-0 w-px h-16 bg-gold z-10" aria-hidden="true" />
+              <div className="absolute top-0 right-0 w-16 h-px bg-gold z-10" aria-hidden="true" />
             </div>
           </div>
 
@@ -290,15 +298,16 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-14">
-            {/* Image placeholder */}
-            <div className="relative aspect-[4/3] bg-stone order-2 lg:order-1">
-              <div className="absolute bottom-0 left-0 w-px h-16 bg-gold" aria-hidden="true" />
-              <div className="absolute bottom-0 left-0 w-16 h-px bg-gold" aria-hidden="true" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-[10px] tracking-[0.15em] uppercase font-body text-charcoal/30">
-                  Photography — Coming Soon
-                </p>
-              </div>
+            {/* Furniture Manufacturing image — from CMS, placeholder fallback */}
+            <div className="relative aspect-[4/3] bg-stone overflow-hidden order-2 lg:order-1">
+              <CmsImage
+                image={images?.furnitureManufacturingImage}
+                fallbackAlt="Custom furniture manufacturing by 1695 Designs"
+                width={800}
+                height={600}
+              />
+              <div className="absolute bottom-0 left-0 w-px h-16 bg-gold z-10" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 w-16 h-px bg-gold z-10" aria-hidden="true" />
             </div>
 
             <div className="space-y-4 font-body text-charcoal/75 leading-relaxed order-1 lg:order-2">
@@ -352,15 +361,16 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            {/* Image placeholder */}
-            <div className="relative aspect-[4/3] bg-stone">
-              <div className="absolute top-0 right-0 w-px h-16 bg-gold" aria-hidden="true" />
-              <div className="absolute top-0 right-0 w-16 h-px bg-gold" aria-hidden="true" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-[10px] tracking-[0.15em] uppercase font-body text-charcoal/30">
-                  Photography — Coming Soon
-                </p>
-              </div>
+            {/* Furniture Supply image — from CMS, placeholder fallback */}
+            <div className="relative aspect-[4/3] bg-stone overflow-hidden">
+              <CmsImage
+                image={images?.furnitureSupplyImage}
+                fallbackAlt="Curated furniture supply by 1695 Designs"
+                width={800}
+                height={600}
+              />
+              <div className="absolute top-0 right-0 w-px h-16 bg-gold z-10" aria-hidden="true" />
+              <div className="absolute top-0 right-0 w-16 h-px bg-gold z-10" aria-hidden="true" />
             </div>
           </div>
 
@@ -389,15 +399,17 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
-            {/* Image placeholder */}
-            <div className="relative aspect-[4/3] bg-charcoal/50 border border-white/10">
-              <div className="absolute bottom-0 right-0 w-px h-16 bg-gold" aria-hidden="true" />
-              <div className="absolute bottom-0 right-0 w-16 h-px bg-gold" aria-hidden="true" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-[10px] tracking-[0.15em] uppercase font-body text-white/20">
-                  Photography — Coming Soon
-                </p>
-              </div>
+            {/* Design & Build image — from CMS, placeholder fallback (dark) */}
+            <div className="relative aspect-[4/3] bg-charcoal/50 border border-white/10 overflow-hidden">
+              <CmsImage
+                image={images?.designBuildImage}
+                fallbackAlt="Design and build project delivery by 1695 Designs"
+                width={800}
+                height={600}
+                dark
+              />
+              <div className="absolute bottom-0 right-0 w-px h-16 bg-gold z-10" aria-hidden="true" />
+              <div className="absolute bottom-0 right-0 w-16 h-px bg-gold z-10" aria-hidden="true" />
             </div>
 
             <div className="space-y-4 font-body text-stone leading-relaxed">

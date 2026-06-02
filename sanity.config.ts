@@ -3,8 +3,8 @@ import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemaTypes";
 
-// siteSettings is a singleton — only one document, managed through a custom structure
-const singletonTypes = new Set(["siteSettings"]);
+// siteSettings & pageImages are singletons — one document each, pinned in the structure
+const singletonTypes = new Set(["siteSettings", "pageImages"]);
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
 
 export default defineConfig({
@@ -23,7 +23,7 @@ export default defineConfig({
         S.list()
           .title("Content")
           .items([
-            // Singleton at the top
+            // Singletons at the top
             S.listItem()
               .title("Site Settings")
               .id("siteSettings")
@@ -32,8 +32,16 @@ export default defineConfig({
                   .schemaType("siteSettings")
                   .documentId("siteSettings")
               ),
+            S.listItem()
+              .title("Page Images")
+              .id("pageImages")
+              .child(
+                S.document()
+                  .schemaType("pageImages")
+                  .documentId("pageImages")
+              ),
             S.divider(),
-            // All other document types, excluding the singleton
+            // All other document types, excluding the singletons
             ...S.documentTypeListItems().filter(
               (item) => !singletonTypes.has(item.getId()!)
             ),

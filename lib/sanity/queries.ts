@@ -149,3 +149,16 @@ export const siteSettingsQuery = groq`
     aboutImage
   }
 `;
+
+/* ─── Page Images (singleton — About & Services imagery) ────────────────── */
+
+export const pageImagesQuery = groq`
+  *[_type == "pageImages"][0] {
+    aboutStoryImage,
+    aboutApproachImage,
+    interiorDesignImage,
+    furnitureManufacturingImage,
+    furnitureSupplyImage,
+    designBuildImage
+  }
+`;
