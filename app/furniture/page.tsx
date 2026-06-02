@@ -2,6 +2,7 @@ import { client } from "@/lib/sanity/client";
 import { allProductsQuery } from "@/lib/sanity/queries";
 import ProductGrid from "@/components/sections/ProductGrid";
 import Container from "@/components/ui/Container";
+import { pageOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export const revalidate = 3600;
@@ -10,11 +11,12 @@ export const metadata: Metadata = {
   title: "Furniture",
   description:
     "Custom-manufactured and curated furniture for corporate, hospitality, and residential environments. Designed and built to fit your specific space.",
-  openGraph: {
+  openGraph: pageOpenGraph({
+    path: "/furniture",
     title: "Furniture Collection | 1695 Designs",
     description:
       "Custom-made and curated furniture pieces — office, hospitality, living, dining, and bedroom. Designed to complement complete interior projects.",
-  },
+  }),
 };
 
 export default async function FurniturePage() {

@@ -69,7 +69,7 @@ export default function Footer({
             <div className="flex flex-col gap-3 text-sm font-body text-stone">
               <a
                 href={`mailto:${email}`}
-                className="hover:text-gold transition-colors"
+                className="underline underline-offset-4 decoration-white/30 hover:text-gold hover:decoration-gold transition-colors"
               >
                 {email}
               </a>

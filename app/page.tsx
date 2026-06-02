@@ -10,6 +10,7 @@ import Contact from "@/components/sections/Contact";
 import { client } from "@/lib/sanity/client";
 import { featuredProjectsQuery, siteSettingsQuery } from "@/lib/sanity/queries";
 import { resolveContact } from "@/lib/contact";
+import { pageOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 
 // ISR — homepage imagery/projects refresh on the same cadence as the CMS pages
@@ -19,11 +20,11 @@ export const metadata: Metadata = {
   title: "1695 Designs — Interior Design & Bespoke Furniture",
   description:
     "1695 Designs is a premium interior design and furniture company creating functional, refined, and fully executed spaces for corporate and hospitality clients — from concept to completion.",
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "1695 Designs — Interior Design & Bespoke Furniture",
     description:
       "Premium interior design and furniture company creating functional, refined spaces for corporate and hospitality clients — from concept to completion.",
-  },
+  }),
 };
 
 export default async function HomePage() {

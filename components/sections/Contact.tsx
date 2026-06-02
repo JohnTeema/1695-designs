@@ -27,7 +27,7 @@ export default function Contact({
                 <div className="w-8 h-px bg-gold" aria-hidden="true" />
                 <a
                   href={`mailto:${email}`}
-                  className="font-body text-charcoal hover:text-gold transition-colors"
+                  className="font-body text-charcoal underline underline-offset-4 decoration-stone hover:text-gold hover:decoration-gold transition-colors"
                 >
                   {email}
                 </a>

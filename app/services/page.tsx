@@ -3,6 +3,7 @@ import Button from "@/components/ui/Button";
 import CmsImage from "@/components/ui/CmsImage";
 import { client } from "@/lib/sanity/client";
 import { pageImagesQuery } from "@/lib/sanity/queries";
+import { pageOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export const revalidate = 3600;
@@ -11,11 +12,12 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Complete interior solutions — interior design, furniture manufacturing, furniture supply, and end-to-end design & build — for corporate, hospitality, and residential environments.",
-  openGraph: {
+  openGraph: pageOpenGraph({
+    path: "/services",
     title: "Services | 1695 Designs",
     description:
       "Interior design, furniture manufacturing, furniture supply, and design & build solutions. We manage every stage from concept to handover.",
-  },
+  }),
 };
 
 /* ─── Data (verbatim from services-copy.md) ─────────────────────────────── */

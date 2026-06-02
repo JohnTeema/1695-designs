@@ -2,6 +2,7 @@ import { client } from "@/lib/sanity/client";
 import { allProjectsQuery } from "@/lib/sanity/queries";
 import ProjectGrid from "@/components/sections/ProjectGrid";
 import Container from "@/components/ui/Container";
+import { pageOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export const revalidate = 3600;
@@ -10,11 +11,12 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "A showcase of 1695 Designs projects across corporate, hospitality, and residential environments — interior design, furniture manufacturing, and full fit-out.",
-  openGraph: {
+  openGraph: pageOpenGraph({
+    path: "/portfolio",
     title: "Portfolio | 1695 Designs",
     description:
       "Selected projects across corporate interiors, hospitality spaces, residential environments, and concept designs.",
-  },
+  }),
 };
 
 export default async function PortfolioPage() {

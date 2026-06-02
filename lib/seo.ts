@@ -16,6 +16,28 @@ export const defaultOgImage = {
 };
 
 /**
+ * Open Graph base for pages. Next.js REPLACES (not deep-merges) the root
+ * layout's openGraph when a page defines its own, so each page must respecify
+ * the shared fields (url, siteName, locale, type) or it loses og:url etc.
+ * Pass a relative `path` ("/about") to set a page-specific og:url.
+ */
+export function pageOpenGraph(o: {
+  title?: string;
+  description?: string;
+  path?: string;
+} = {}) {
+  return {
+    siteName: "1695 Designs",
+    type: "website" as const,
+    locale: "en_NG",
+    url: o.path ? `${baseUrl}${o.path}` : baseUrl,
+    title: o.title,
+    description: o.description,
+    images: [defaultOgImage],
+  };
+}
+
+/**
  * Organization + LocalBusiness JSON-LD.
  * Phone and address are intentionally OMITTED — add them once the client
  * confirms the final contact details before launch.

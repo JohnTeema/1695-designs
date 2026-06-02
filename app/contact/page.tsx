@@ -3,6 +3,7 @@ import ContactForm from "@/components/sections/ContactForm";
 import { client } from "@/lib/sanity/client";
 import { siteSettingsQuery } from "@/lib/sanity/queries";
 import { resolveContact, whatsappHref } from "@/lib/contact";
+import { pageOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export const revalidate = 3600;
@@ -11,11 +12,12 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with 1695 Designs to discuss your interior design or furniture project. We respond to all inquiries within one business day.",
-  openGraph: {
+  openGraph: pageOpenGraph({
+    path: "/contact",
     title: "Contact 1695 Designs",
     description:
       "Let's discuss your project. Share your requirements and our team will get back to you within one business day.",
-  },
+  }),
 };
 
 export default async function ContactPage() {
@@ -61,7 +63,7 @@ export default async function ContactPage() {
                 </p>
                 <a
                   href={`mailto:${email}`}
-                  className="font-body text-charcoal hover:text-gold transition-colors"
+                  className="font-body text-charcoal underline underline-offset-4 decoration-stone hover:text-gold hover:decoration-gold transition-colors"
                 >
                   {email}
                 </a>
@@ -74,7 +76,7 @@ export default async function ContactPage() {
                   </p>
                   <a
                     href={phoneHref}
-                    className="font-body text-charcoal hover:text-gold transition-colors"
+                    className="font-body text-charcoal underline underline-offset-4 decoration-stone hover:text-gold hover:decoration-gold transition-colors"
                   >
                     {phone}
                   </a>

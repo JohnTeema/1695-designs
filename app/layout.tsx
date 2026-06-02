@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     siteName: "1695 Designs",
     type: "website",
     locale: "en_NG",
+    url: baseUrl,
     images: [defaultOgImage],
   },
   twitter: {

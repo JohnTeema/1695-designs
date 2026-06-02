@@ -4,6 +4,7 @@ import { client } from "@/lib/sanity/client";
 import { allPostsQuery } from "@/lib/sanity/queries";
 import { urlFor } from "@/lib/sanity/image";
 import Container from "@/components/ui/Container";
+import { pageOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export const revalidate = 3600;
@@ -12,11 +13,12 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Insights on interior design, furniture manufacturing, and creating spaces that perform — from the 1695 Designs team.",
-  openGraph: {
+  openGraph: pageOpenGraph({
+    path: "/blog",
     title: "Blog | 1695 Designs",
     description:
       "Articles on interior design, bespoke furniture, and project delivery from the 1695 Designs studio.",
-  },
+  }),
 };
 
 type Post = {

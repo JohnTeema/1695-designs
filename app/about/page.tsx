@@ -3,6 +3,7 @@ import Button from "@/components/ui/Button";
 import CmsImage from "@/components/ui/CmsImage";
 import { client } from "@/lib/sanity/client";
 import { pageImagesQuery } from "@/lib/sanity/queries";
+import { pageOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export const revalidate = 3600;
@@ -11,11 +12,12 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "1695 Designs was founded on the belief that great spaces are not just designed — they are carefully crafted, built, and experienced. Interior design, furniture manufacturing, and supply under one roof.",
-  openGraph: {
+  openGraph: pageOpenGraph({
+    path: "/about",
     title: "About 1695 Designs",
     description:
       "We bring interior design, furniture manufacturing, and furniture supply into one unified process — ensuring that what is imagined is exactly what is delivered.",
-  },
+  }),
 };
 
 /* ─── Data ───────────────────────────────────────────────────────────────── */
