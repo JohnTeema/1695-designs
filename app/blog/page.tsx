@@ -48,7 +48,7 @@ export default async function BlogPage() {
           className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/80"
           aria-hidden="true"
         />
-        <div className="relative z-10 w-full mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16 xl:px-20 pb-14 md:pb-18 pt-36 md:pt-44">
+        <div className="relative z-10 w-full mx-auto max-w-site px-6 md:px-10 lg:px-16 xl:px-20 pb-14 md:pb-18 pt-36 md:pt-44">
           <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
             Journal
           </p>

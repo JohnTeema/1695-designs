@@ -10,6 +10,10 @@
 
   --font-heading: var(--font-cormorant);
   --font-body:    var(--font-inter);
+
+  /* Site content max-width — single source of truth (1440px).
+     The --container-* namespace generates the `max-w-site` utility. */
+  --container-site: 90rem;
 }
 
 /* ─── Base ───────────────────────────────────────────────────────────────── */

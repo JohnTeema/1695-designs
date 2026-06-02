@@ -10,7 +10,7 @@ export default function Container({ children, className = "", narrow }: Containe
   return (
     <div
       className={`mx-auto w-full px-6 md:px-10 lg:px-16 xl:px-20 ${
-        narrow ? "max-w-3xl" : "max-w-[1440px]"
+        narrow ? "max-w-3xl" : "max-w-site"
       } ${className}`}
     >
       {children}
