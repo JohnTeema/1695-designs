@@ -15,7 +15,7 @@ export default function Hero({ heroImages = [] }: { heroImages?: SanityImage[] }
   const hasImages = images.length > 0;
 
   return (
-    <section className="relative min-h-screen flex items-end bg-charcoal overflow-hidden">
+    <section className="relative min-h-[78vh] md:min-h-screen flex items-end bg-charcoal overflow-hidden">
       {/* CMS hero photography (calm static image, or slow crossfade for 2–3) */}
       {hasImages && <HeroBackground images={images} />}
 
