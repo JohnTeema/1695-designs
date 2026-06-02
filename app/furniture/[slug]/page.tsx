@@ -2,8 +2,9 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { client } from "@/lib/sanity/client";
-import { productBySlugQuery, allProductSlugsQuery } from "@/lib/sanity/queries";
+import { productBySlugQuery, allProductSlugsQuery, siteSettingsQuery } from "@/lib/sanity/queries";
 import { urlFor } from "@/lib/sanity/image";
+import { resolveContact, whatsappHref } from "@/lib/contact";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
@@ -42,11 +43,15 @@ const categoryLabel: Record<string, string> = {
 
 export default async function ProductDetailPage({ params }: Props) {
   const { slug } = await params;
-  const product = await client.fetch(productBySlugQuery, { slug }).catch(() => null);
+  const [product, settings] = await Promise.all([
+    client.fetch(productBySlugQuery, { slug }).catch(() => null),
+    client.fetch(siteSettingsQuery).catch(() => null),
+  ]);
   if (!product) notFound();
 
-  const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "2348000000000";
-  const waMessage = encodeURIComponent(
+  const { whatsappNumber } = resolveContact(settings);
+  const waLink = whatsappHref(
+    whatsappNumber,
     `Hello, I'm interested in the ${product.title} and would like more information.`
   );
 
@@ -143,7 +148,7 @@ export default async function ProductDetailPage({ params }: Props) {
                     Request a Quote
                   </Button>
                   <a
-                    href={`https://wa.me/${waNumber}?text=${waMessage}`}
+                    href={waLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full text-[11px] tracking-[0.12em] uppercase font-body font-medium border border-stone text-charcoal px-8 py-4 hover:border-gold hover:text-gold transition-all duration-300"

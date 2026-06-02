@@ -9,6 +9,7 @@ import CTA from "@/components/sections/CTA";
 import Contact from "@/components/sections/Contact";
 import { client } from "@/lib/sanity/client";
 import { featuredProjectsQuery, siteSettingsQuery } from "@/lib/sanity/queries";
+import { resolveContact } from "@/lib/contact";
 import type { Metadata } from "next";
 
 // ISR — homepage imagery/projects refresh on the same cadence as the CMS pages
@@ -30,6 +31,7 @@ export default async function HomePage() {
     client.fetch(featuredProjectsQuery).catch(() => []),
     client.fetch(siteSettingsQuery).catch(() => null),
   ]);
+  const contact = resolveContact(settings);
 
   return (
     <>
@@ -41,7 +43,7 @@ export default async function HomePage() {
       <WhyUs />
       <Testimonials />
       <CTA />
-      <Contact />
+      <Contact email={contact.email} whatsappNumber={contact.whatsappNumber} />
     </>
   );
 }

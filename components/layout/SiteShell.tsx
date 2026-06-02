@@ -4,8 +4,15 @@ import { usePathname } from "next/navigation";
 import Header from "./Header";
 import Footer from "./Footer";
 import WhatsAppButton from "./WhatsAppButton";
+import type { Contact } from "@/lib/contact";
 
-export default function SiteShell({ children }: { children: React.ReactNode }) {
+export default function SiteShell({
+  children,
+  contact,
+}: {
+  children: React.ReactNode;
+  contact: Contact;
+}) {
   const pathname = usePathname();
   const isStudio = pathname?.startsWith("/studio");
 
@@ -17,8 +24,8 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
     <>
       <Header />
       <main className="flex-1">{children}</main>
-      <Footer />
-      <WhatsAppButton />
+      <Footer email={contact.email} whatsappNumber={contact.whatsappNumber} />
+      <WhatsAppButton whatsappNumber={contact.whatsappNumber} />
     </>
   );
 }

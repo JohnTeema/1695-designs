@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
+import { whatsappHref } from "@/lib/contact";
 
 const navLinks = [
   { label: "About", href: "/about" },
@@ -11,7 +12,13 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-export default function Footer() {
+export default function Footer({
+  email,
+  whatsappNumber,
+}: {
+  email: string;
+  whatsappNumber: string;
+}) {
   return (
     <footer className="bg-charcoal text-warm-white">
       <Container>
@@ -61,13 +68,16 @@ export default function Footer() {
             </h3>
             <div className="flex flex-col gap-3 text-sm font-body text-stone">
               <a
-                href="mailto:hello@1695designs.com"
+                href={`mailto:${email}`}
                 className="hover:text-gold transition-colors"
               >
-                hello@1695designs.com
+                {email}
               </a>
               <a
-                href="https://wa.me/2348000000000"
+                href={whatsappHref(
+                  whatsappNumber,
+                  "Hello, I'd like to discuss a project with 1695 Designs."
+                )}
                 className="hover:text-gold transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"

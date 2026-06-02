@@ -4,6 +4,9 @@ import "./globals.css";
 import SiteShell from "@/components/layout/SiteShell";
 import JsonLd from "@/components/seo/JsonLd";
 import { baseUrl, organizationJsonLd, defaultOgImage } from "@/lib/seo";
+import { client } from "@/lib/sanity/client";
+import { siteSettingsQuery } from "@/lib/sanity/queries";
+import { resolveContact } from "@/lib/contact";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -52,14 +55,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // Contact details for the footer + WhatsApp button come from siteSettings.
+  // Revalidated on edit via /api/revalidate (revalidatePath("/", "layout")).
+  const settings = await client.fetch(siteSettingsQuery).catch(() => null);
+  const contact = resolveContact(settings);
+
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <body className="min-h-screen flex flex-col bg-warm-white text-charcoal antialiased">
         <JsonLd data={organizationJsonLd} />
-        <SiteShell>{children}</SiteShell>
+        <SiteShell contact={contact}>{children}</SiteShell>
       </body>
     </html>
   );

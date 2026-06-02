@@ -1,7 +1,14 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import { whatsappHref } from "@/lib/contact";
 
-export default function Contact() {
+export default function Contact({
+  email,
+  whatsappNumber,
+}: {
+  email: string;
+  whatsappNumber: string;
+}) {
   return (
     <section id="contact" className="py-24 md:py-32 bg-warm-white">
       <Container>
@@ -19,16 +26,19 @@ export default function Contact() {
               <div className="flex items-center gap-4">
                 <div className="w-8 h-px bg-gold" aria-hidden="true" />
                 <a
-                  href="mailto:hello@1695designs.com"
+                  href={`mailto:${email}`}
                   className="font-body text-charcoal hover:text-gold transition-colors"
                 >
-                  hello@1695designs.com
+                  {email}
                 </a>
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-8 h-px bg-gold" aria-hidden="true" />
                 <a
-                  href="https://wa.me/2348000000000"
+                  href={whatsappHref(
+                    whatsappNumber,
+                    "Hello, I'd like to discuss a project with 1695 Designs."
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-body text-charcoal hover:text-gold transition-colors"

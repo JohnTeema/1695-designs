@@ -1,9 +1,14 @@
-export default function WhatsAppButton() {
-  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "2348000000000";
-  const message = encodeURIComponent(
+import { whatsappHref } from "@/lib/contact";
+
+export default function WhatsAppButton({
+  whatsappNumber,
+}: {
+  whatsappNumber: string;
+}) {
+  const href = whatsappHref(
+    whatsappNumber,
     "Hello, I'd like to discuss a design project with 1695 Designs."
   );
-  const href = `https://wa.me/${number}?text=${message}`;
 
   return (
     <a

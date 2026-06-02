@@ -1,6 +1,11 @@
 import Container from "@/components/ui/Container";
 import ContactForm from "@/components/sections/ContactForm";
+import { client } from "@/lib/sanity/client";
+import { siteSettingsQuery } from "@/lib/sanity/queries";
+import { resolveContact, whatsappHref } from "@/lib/contact";
 import type { Metadata } from "next";
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -13,11 +18,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
-  const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "2348000000000";
-  const waMessage = encodeURIComponent(
-    "Hello, I'd like to discuss a project with 1695 Designs."
-  );
+export default async function ContactPage() {
+  const settings = await client.fetch(siteSettingsQuery).catch(() => null);
+  const { email, phone, address, whatsappNumber } = resolveContact(settings);
+  // tel: link needs digits/plus only
+  const phoneHref = phone ? `tel:${phone.replace(/[^\d+]/g, "")}` : "";
 
   return (
     <>
@@ -47,7 +52,7 @@ export default function ContactPage() {
               <ContactForm />
             </div>
 
-            {/* ── Contact details — 1 of 3 columns ──────────────────────── */}
+            {/* ── Contact details — 1 of 3 columns (from siteSettings) ──── */}
             <div className="lg:col-span-1 space-y-10">
 
               <div>
@@ -55,19 +60,36 @@ export default function ContactPage() {
                   Email
                 </p>
                 <a
-                  href="mailto:hello@1695designs.com"
+                  href={`mailto:${email}`}
                   className="font-body text-charcoal hover:text-gold transition-colors"
                 >
-                  hello@1695designs.com
+                  {email}
                 </a>
               </div>
+
+              {phone && (
+                <div>
+                  <p className="text-[10px] tracking-[0.2em] uppercase font-body font-medium text-grey mb-4">
+                    Phone
+                  </p>
+                  <a
+                    href={phoneHref}
+                    className="font-body text-charcoal hover:text-gold transition-colors"
+                  >
+                    {phone}
+                  </a>
+                </div>
+              )}
 
               <div>
                 <p className="text-[10px] tracking-[0.2em] uppercase font-body font-medium text-grey mb-4">
                   WhatsApp
                 </p>
                 <a
-                  href={`https://wa.me/${waNumber}?text=${waMessage}`}
+                  href={whatsappHref(
+                    whatsappNumber,
+                    "Hello, I'd like to discuss a project with 1695 Designs."
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-body text-charcoal hover:text-gold transition-colors"
@@ -75,6 +97,17 @@ export default function ContactPage() {
                   Chat directly on WhatsApp →
                 </a>
               </div>
+
+              {address && (
+                <div>
+                  <p className="text-[10px] tracking-[0.2em] uppercase font-body font-medium text-grey mb-4">
+                    Office Address
+                  </p>
+                  <p className="font-body text-charcoal/80 text-sm leading-relaxed whitespace-pre-line">
+                    {address}
+                  </p>
+                </div>
+              )}
 
               <div>
                 <p className="text-[10px] tracking-[0.2em] uppercase font-body font-medium text-grey mb-4">
