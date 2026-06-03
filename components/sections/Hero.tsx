@@ -15,7 +15,7 @@ export default function Hero({ heroImages = [] }: { heroImages?: SanityImage[] }
   const hasImages = images.length > 0;
 
   return (
-    <section className="relative min-h-[78vh] md:min-h-screen flex items-end bg-charcoal overflow-hidden">
+    <section className="relative min-h-[78vh] md:min-h-screen flex items-start md:items-end bg-charcoal overflow-hidden">
       {/* CMS hero photography (calm static image, or slow crossfade for 2–3) */}
       {hasImages && <HeroBackground images={images} />}
 
@@ -30,8 +30,21 @@ export default function Hero({ heroImages = [] }: { heroImages?: SanityImage[] }
         aria-hidden="true"
       />
 
-      {/* Content — aligned to the same container edge as every other section */}
-      <div className="relative z-10 w-full mx-auto max-w-site px-6 md:px-10 lg:px-16 xl:px-20 pb-20 md:pb-28">
+      {/* Mobile-only top scrim: the headline is top-anchored on mobile, where the
+          base overlay is lightest — this keeps the white text readable over the
+          bright top of the photo. Hidden on desktop (content sits at the bottom). */}
+      {hasImages && (
+        <div
+          className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-charcoal/95 via-charcoal/60 to-transparent md:hidden"
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Content — aligned to the same container edge as every other section.
+          Mobile: top-anchored with a fixed offset below the fixed nav (h-20=80px)
+          so the headline always clears it by ~48px, regardless of viewport
+          height. Desktop: bottom-anchored as before (md:items-end). */}
+      <div className="relative z-10 w-full mx-auto max-w-site px-6 md:px-10 lg:px-16 xl:px-20 pt-32 pb-20 md:pt-0 md:pb-28">
         <div className="max-w-2xl">
           <h1 className="font-heading font-semibold text-warm-white leading-[1.05] mb-8">
             <span className="block text-[clamp(2.8rem,5vw,5rem)]">Design.</span>
