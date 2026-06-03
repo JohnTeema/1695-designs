@@ -283,14 +283,14 @@ export default async function ServicesPage() {
       </section>
 
       {/* ── Service 2 — Furniture Manufacturing ──────────────────────────── */}
-      <section className="py-24 md:py-32 bg-stone/20">
+      <section className="py-24 md:py-32 bg-charcoal">
         <Container>
           <div className="flex items-start gap-6 mb-14">
-            <span className="font-heading text-5xl font-medium text-charcoal/10 leading-none mt-1 select-none">
+            <span className="font-heading text-5xl font-medium text-warm-white/10 leading-none mt-1 select-none">
               02
             </span>
             <div>
-              <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
+              <h2 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
                 Furniture Manufacturing
               </h2>
               <p className="font-body text-gold mt-2 tracking-wide">
@@ -301,18 +301,19 @@ export default async function ServicesPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-14">
             {/* Furniture Manufacturing image — from CMS, placeholder fallback */}
-            <div className="relative aspect-[4/3] bg-stone overflow-hidden order-2 lg:order-1">
+            <div className="relative aspect-[4/3] bg-charcoal/50 border border-white/10 overflow-hidden order-2 lg:order-1">
               <CmsImage
                 image={images?.furnitureManufacturingImage}
                 fallbackAlt="Custom furniture manufacturing by 1695 Designs"
                 width={800}
                 height={600}
+                dark
               />
               <div className="absolute bottom-0 left-0 w-px h-16 bg-gold z-10" aria-hidden="true" />
               <div className="absolute bottom-0 left-0 w-16 h-px bg-gold z-10" aria-hidden="true" />
             </div>
 
-            <div className="space-y-4 font-body text-charcoal/75 leading-relaxed order-1 lg:order-2">
+            <div className="space-y-4 font-body text-stone leading-relaxed order-1 lg:order-2">
               <p>
                 Great spaces deserve furniture that fits perfectly. Our furniture
                 manufacturing division produces custom-made pieces designed to complement
@@ -324,9 +325,9 @@ export default async function ServicesPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-stone pt-12">
-            <ListBlock heading="What We Manufacture" items={furnitureManufacturedItems} />
-            <ListBlock heading="Why Custom Furniture?" items={whyCustomFurniture} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-white/10 pt-12">
+            <ListBlock heading="What We Manufacture" items={furnitureManufacturedItems} light />
+            <ListBlock heading="Why Custom Furniture?" items={whyCustomFurniture} light />
           </div>
         </Container>
       </section>
@@ -456,10 +457,10 @@ export default async function ServicesPage() {
       </section>
 
       {/* ── Why Clients Choose 1695 Designs ──────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-warm-white">
+      <section className="py-24 md:py-32 bg-charcoal">
         <Container>
           <div className="max-w-xl mb-16">
-            <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
+            <h2 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
               Why Clients Choose 1695 Designs
             </h2>
           </div>
@@ -468,13 +469,13 @@ export default async function ServicesPage() {
             {whyChoose.map((point) => (
               <div
                 key={point.title}
-                className="p-8 md:p-10 border border-stone hover:border-gold/40 transition-colors duration-300"
+                className="p-8 md:p-10 border border-white/10 hover:border-gold/40 transition-colors duration-300"
               >
                 <div className="w-6 h-px bg-gold mb-6" aria-hidden="true" />
-                <h3 className="font-heading font-medium text-charcoal text-xl mb-3">
+                <h3 className="font-heading font-medium text-warm-white text-xl mb-3">
                   {point.title}
                 </h3>
-                <p className="font-body text-charcoal/70 text-sm leading-relaxed">
+                <p className="font-body text-grey text-sm leading-relaxed">
                   {point.body}
                 </p>
               </div>
