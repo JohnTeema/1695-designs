@@ -4,14 +4,14 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="py-24 md:py-32 bg-warm-white">
       <Container>
-        <div className="max-w-xl mb-16 md:mb-20">
+        <div className="reveal max-w-xl mb-16 md:mb-20">
           <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
             What Clients Say
           </h2>
         </div>
 
         {/* Placeholder testimonial — real quotes to be added in Phase 2 */}
-        <div className="max-w-2xl">
+        <div className="reveal reveal-delay-1 max-w-2xl">
           <div className="p-8 md:p-12 bg-stone/20">
             <div
               className="text-gold/50 font-heading text-6xl leading-none mb-6 select-none"

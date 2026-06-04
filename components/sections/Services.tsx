@@ -27,7 +27,7 @@ export default function Services() {
     <section id="services" className="py-24 md:py-32 bg-charcoal">
       <Container>
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 md:mb-20">
+        <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 md:mb-20">
           <div>
             <h2 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
               What We Do
@@ -47,10 +47,10 @@ export default function Services() {
 
         {/* Three pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
-          {services.map((service) => (
+          {services.map((service, i) => (
             <div
               key={service.number}
-              className="group p-8 md:p-10 border border-white/8 hover:border-gold/40 transition-all duration-500"
+              className={`reveal reveal-delay-${i + 1} group p-8 md:p-10 border border-white/8 hover:border-gold/40 transition-all duration-500`}
             >
               <span className="text-[11px] tracking-[0.2em] font-body font-medium text-gold/60 block mb-6">
                 {service.number}

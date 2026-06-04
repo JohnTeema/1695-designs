@@ -15,7 +15,7 @@ export default function WhyUs() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Heading */}
-          <div>
+          <div className="reveal">
             <h2 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
               Why 1695 Designs
             </h2>
@@ -25,7 +25,7 @@ export default function WhyUs() {
           </div>
 
           {/* Points */}
-          <ul className="space-y-0 divide-y divide-white/8">
+          <ul className="reveal reveal-delay-2 space-y-0 divide-y divide-white/8">
             {points.map((point) => (
               <li key={point} className="flex items-center gap-5 py-5">
                 <div className="w-5 h-px bg-gold shrink-0" aria-hidden="true" />

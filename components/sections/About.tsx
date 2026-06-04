@@ -20,7 +20,7 @@ export default function About({ aboutImage }: { aboutImage?: SanityImage | null 
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image — from CMS, with a tasteful placeholder fallback */}
-          <div className="relative aspect-[4/5] bg-stone order-2 lg:order-1 overflow-hidden">
+          <div className="reveal relative aspect-[4/5] bg-stone order-2 lg:order-1 overflow-hidden">
             {hasImage ? (
               <Image
                 src={urlFor(aboutImage!).width(900).height(1125).quality(80).url()}
@@ -47,7 +47,7 @@ export default function About({ aboutImage }: { aboutImage?: SanityImage | null 
           </div>
 
           {/* Text */}
-          <div className="order-1 lg:order-2">
+          <div className="reveal reveal-delay-2 order-1 lg:order-2">
             <h2 className="font-heading font-semibold text-charcoal text-[clamp(2.2rem,4vw,3.2rem)] leading-[1.1] mb-8">
               We design spaces that work as beautifully as they look
             </h2>

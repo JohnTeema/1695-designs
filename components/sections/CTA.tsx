@@ -8,7 +8,7 @@ export default function CTA() {
       <div className="absolute left-0 bottom-0 w-full h-px bg-gold/20" aria-hidden="true" />
 
       <Container narrow>
-        <div className="text-center">
+        <div className="reveal text-center">
           <h2 className="font-heading font-semibold text-warm-white text-[clamp(2.2rem,4.5vw,4rem)] leading-[1.05] mb-8">
             Let&apos;s Build Your
             <br />

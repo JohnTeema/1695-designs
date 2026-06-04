@@ -30,7 +30,7 @@ export default function PortfolioTeaser({ projects = [] }: { projects?: Project[
     <section id="portfolio" className="py-24 md:py-32 bg-stone/30">
       <Container>
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
+        <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
           <div>
             <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1] mb-4">
               Selected Projects
@@ -47,20 +47,20 @@ export default function PortfolioTeaser({ projects = [] }: { projects?: Project[
         {/* Project cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {hasProjects
-            ? featured.map((project) => (
+            ? featured.map((project, i) => (
                 <Link
                   key={project._id}
                   href={`/portfolio/${project.slug.current}`}
-                  className="group block"
+                  className={`reveal reveal-delay-${i + 1} group block card-lift`}
                 >
-                  <div className="relative aspect-[3/4] bg-stone overflow-hidden mb-5">
+                  <div className="card-img relative aspect-[3/4] bg-stone overflow-hidden mb-5">
                     {project.coverImage?.asset ? (
                       <Image
                         src={urlFor(project.coverImage).width(700).height(933).quality(80).url()}
                         alt={project.coverImage.alt ?? project.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="object-cover"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center bg-stone">

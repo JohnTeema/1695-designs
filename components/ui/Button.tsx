@@ -23,9 +23,9 @@ export default function Button({
 
   const variants = {
     primary:
-      "bg-charcoal text-warm-white px-8 py-4 hover:bg-gold",
+      "bg-charcoal text-warm-white px-8 py-4 hover:bg-gold hover:-translate-y-0.5 hover:shadow-md",
     outline:
-      "border border-charcoal text-charcoal px-8 py-4 hover:border-gold hover:text-gold",
+      "border border-charcoal text-charcoal px-8 py-4 hover:border-gold hover:text-gold hover:-translate-y-0.5 hover:shadow-sm",
     ghost:
       "text-charcoal underline-offset-4 hover:text-gold hover:underline",
   };

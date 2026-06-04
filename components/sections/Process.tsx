@@ -28,7 +28,7 @@ export default function Process() {
     <section id="process" className="py-24 md:py-32 bg-warm-white">
       <Container>
         {/* Header */}
-        <div className="max-w-xl mb-16 md:mb-20">
+        <div className="reveal max-w-xl mb-16 md:mb-20">
           <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
             How We Work
           </h2>
@@ -39,7 +39,7 @@ export default function Process() {
           {steps.map((step, i) => (
             <div
               key={step.number}
-              className={`p-10 md:p-12 ${
+              className={`reveal reveal-delay-${i + 1} p-10 md:p-12 ${
                 i % 2 === 0 ? "md:border-r border-stone" : ""
               } ${i < 2 ? "border-b border-stone" : ""}`}
             >
