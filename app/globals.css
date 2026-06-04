@@ -30,7 +30,16 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-heading-var), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Display headlines — oversized uppercase editorial treatment */
+.display-heading {
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  line-height: 0.95;
 }
 
 /* ─── Hero word-reveal animation ─────────────────────────────────────────── */

@@ -201,7 +201,7 @@ export default async function ServicesPage() {
             <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
               Our Services
             </p>
-            <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] mb-8">
+            <h1 className="font-heading font-extrabold text-warm-white uppercase tracking-[-0.03em] leading-[0.95] mb-8 text-[clamp(3rem,6vw,5.5rem)]">
               Design. Craft. Deliver.
             </h1>
             <div className="space-y-4 font-body text-stone leading-relaxed max-w-2xl">

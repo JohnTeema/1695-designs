@@ -8,7 +8,7 @@ export default function Services() {
         {/* Header */}
         <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 md:mb-20">
           <div>
-            <h2 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
+            <h2 className="font-heading font-bold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.05] tracking-[-0.02em]">
               What We Do
             </h2>
             <p className="font-body text-grey mt-4 max-w-md">

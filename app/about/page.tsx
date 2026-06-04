@@ -73,7 +73,7 @@ export default async function AboutPage() {
             <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-8">
               About 1695 Designs
             </p>
-            <h1 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] mb-8">
+            <h1 className="font-heading font-extrabold text-warm-white uppercase tracking-[-0.03em] leading-[0.95] mb-8 text-[clamp(3rem,6vw,5.5rem)]">
               We don&apos;t just design spaces. We shape how they are experienced.
             </h1>
             <p className="font-body text-stone text-lg leading-relaxed max-w-2xl">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 import SiteShell from "@/components/layout/SiteShell";
 import JsonLd from "@/components/seo/JsonLd";
@@ -8,10 +8,10 @@ import { client } from "@/lib/sanity/client";
 import { siteSettingsQuery } from "@/lib/sanity/queries";
 import { resolveContact } from "@/lib/contact";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const outfit = Outfit({
+  variable: "--font-heading-var",
   subsets: ["latin"],
-  weight: ["500", "600"],
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
@@ -65,7 +65,7 @@ export default async function RootLayout({
   const contact = resolveContact(settings);
 
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
       <body className="min-h-screen flex flex-col bg-warm-white text-charcoal antialiased">
         <JsonLd data={organizationJsonLd} />
         <SiteShell contact={contact}>{children}</SiteShell>

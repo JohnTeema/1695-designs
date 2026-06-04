@@ -54,7 +54,7 @@ export default async function BlogPage() {
           <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
             Journal
           </p>
-          <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05]">
+          <h1 className="font-heading font-extrabold text-warm-white uppercase tracking-[-0.03em] leading-[0.95] text-[clamp(3rem,6vw,5.5rem)]">
             Blog
           </h1>
         </div>

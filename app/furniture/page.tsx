@@ -34,7 +34,7 @@ export default async function FurniturePage() {
           <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
             Collection
           </p>
-          <h1 className="font-heading font-semibold text-warm-white text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] mb-6">
+          <h1 className="font-heading font-extrabold text-warm-white uppercase tracking-[-0.03em] leading-[0.95] mb-6 text-[clamp(3rem,6vw,5.5rem)]">
             Furniture
           </h1>
           <p className="font-body text-stone text-lg max-w-xl">

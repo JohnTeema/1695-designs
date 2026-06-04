@@ -48,7 +48,7 @@ export default function About({ aboutImage }: { aboutImage?: SanityImage | null 
 
           {/* Text */}
           <div className="reveal reveal-delay-2 order-1 lg:order-2">
-            <h2 className="font-heading font-semibold text-charcoal text-[clamp(2.2rem,4vw,3.2rem)] leading-[1.1] mb-8">
+            <h2 className="font-heading font-bold text-charcoal text-[clamp(2.2rem,4vw,3.5rem)] leading-[1.05] mb-8">
               We design spaces that work as beautifully as they look
             </h2>
             <div className="space-y-5 font-body text-charcoal/80 leading-relaxed">

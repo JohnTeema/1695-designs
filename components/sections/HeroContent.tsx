@@ -16,14 +16,14 @@ export default function HeroContent() {
 
   return (
     <div className={`max-w-2xl${animated ? " hero-animate" : ""}`}>
-      <h1 className="font-heading font-semibold text-warm-white leading-[1.05] mb-8">
-        <span className="hero-word hero-word-1 block text-[clamp(2.8rem,5vw,5rem)]">
+      <h1 className="font-heading font-extrabold text-warm-white uppercase tracking-[-0.03em] leading-[0.95] mb-10">
+        <span className="hero-word hero-word-1 block text-[clamp(3.5rem,9vw,8rem)]">
           Design.
         </span>
-        <span className="hero-word hero-word-2 block text-[clamp(2.8rem,5vw,5rem)]">
+        <span className="hero-word hero-word-2 block text-[clamp(3.5rem,9vw,8rem)]">
           Craft.
         </span>
-        <span className="hero-word hero-word-3 block text-[clamp(2.8rem,5vw,5rem)]">
+        <span className="hero-word hero-word-3 block text-[clamp(3.5rem,9vw,8rem)]">
           Transform.
         </span>
       </h1>

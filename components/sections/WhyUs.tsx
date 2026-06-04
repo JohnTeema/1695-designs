@@ -16,7 +16,7 @@ export default function WhyUs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Heading */}
           <div className="reveal">
-            <h2 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
+            <h2 className="font-heading font-bold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.05] tracking-[-0.02em]">
               Why 1695 Designs
             </h2>
             <p className="font-body text-grey mt-6 leading-relaxed">
