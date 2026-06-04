@@ -14,7 +14,7 @@ export default function OgImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-end",
-          background: "#1C1C1C",
+          background: "#0B0B0F",
           padding: "72px",
         }}
       >
@@ -26,7 +26,7 @@ export default function OgImage() {
             left: 0,
             width: "100%",
             height: "4px",
-            background: "#B08D57",
+            background: "#C8A24A",
           }}
         />
 
@@ -36,7 +36,7 @@ export default function OgImage() {
             fontSize: 14,
             letterSpacing: "0.22em",
             textTransform: "uppercase",
-            color: "#B08D57",
+            color: "#C8A24A",
             fontFamily: "sans-serif",
             marginBottom: 24,
           }}
@@ -56,7 +56,7 @@ export default function OgImage() {
             style={{
               fontSize: 96,
               fontWeight: 700,
-              color: "#F5F3EF",
+              color: "#F5F1E8",
               fontFamily: "serif",
               lineHeight: 1,
               letterSpacing: "-0.01em",
@@ -68,7 +68,7 @@ export default function OgImage() {
             style={{
               fontSize: 32,
               fontWeight: 400,
-              color: "#D8D2C8",
+              color: "#D8D2C8",  /* stone — unchanged */
               fontFamily: "sans-serif",
               letterSpacing: "0.35em",
               textTransform: "uppercase",

@@ -2,13 +2,14 @@
 
 /* ─── Brand Tokens — single source of truth ─────────────────────────────── */
 @theme {
-  --color-charcoal:   #1C1C1C;
-  --color-gold:       #B08D57;
-  --color-warm-white: #F5F3EF;
+  --color-charcoal:   #0B0B0F;
+  --color-gold:       #C8A24A;
+  --color-warm-white: #F5F1E8;
   --color-stone:      #D8D2C8;
   --color-grey:       #A6A6A6;
+  --color-clay:       #C46A4A;
 
-  --font-heading: var(--font-cormorant);
+  --font-heading: var(--font-heading-var);
   --font-body:    var(--font-inter);
 
   /* Site content max-width — single source of truth (1440px).
@@ -22,8 +23,8 @@ html {
 }
 
 body {
-  background-color: #F5F3EF;
-  color: #1C1C1C;
+  background-color: #F5F1E8;
+  color: #0B0B0F;
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }

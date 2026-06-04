@@ -23,7 +23,7 @@ export default function Button({
 
   const variants = {
     primary:
-      "bg-charcoal text-warm-white px-8 py-4 hover:bg-gold hover:-translate-y-0.5 hover:shadow-md",
+      "bg-clay text-warm-white px-8 py-4 hover:bg-clay/90 hover:-translate-y-0.5 hover:shadow-md",
     outline:
       "border border-charcoal text-charcoal px-8 py-4 hover:border-gold hover:text-gold hover:-translate-y-0.5 hover:shadow-sm",
     ghost:
