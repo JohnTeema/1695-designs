@@ -59,7 +59,7 @@ export default function ProductGrid({ products }: { products: Product[] }) {
             <Link
               key={product._id}
               href={`/furniture/${product.slug.current}`}
-              className="card-lift group block"
+              className="card-lift card-view-cursor group block"
             >
               <div className="card-img relative aspect-square bg-stone overflow-hidden mb-5">
                 {product.coverImage?.asset ? (

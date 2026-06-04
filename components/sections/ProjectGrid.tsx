@@ -60,7 +60,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
             <Link
               key={project._id}
               href={`/portfolio/${project.slug.current}`}
-              className="card-lift group block"
+              className="card-lift card-view-cursor group block"
             >
               <div className="card-img relative aspect-[4/3] bg-stone overflow-hidden mb-5">
                 {project.coverImage?.asset ? (

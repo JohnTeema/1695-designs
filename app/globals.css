@@ -205,8 +205,19 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Cursor on interactive non-button elements */
 @media (hover: hover) {
-  .card-lift, [role="button"] {
+  .card-lift {
     cursor: pointer;
+  }
+}
+
+/* ─── Portfolio / furniture card — "View" cursor label ───────────────────── */
+/* Uses CSS only: custom cursor text on hover (desktop only, no JS) */
+@media (hover: hover) {
+  .card-view-cursor {
+    cursor: pointer;
+  }
+  .card-view-cursor:hover {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='24' viewBox='0 0 56 24'%3E%3Crect width='56' height='24' rx='12' fill='%230B0B0F'/%3E%3Ctext x='28' y='16' text-anchor='middle' font-family='system-ui,sans-serif' font-size='9' font-weight='600' letter-spacing='0.1em' fill='%23F5F1E8'%3EVIEW%3C/text%3E%3C/svg%3E") 28 12, pointer;
   }
 }
 
