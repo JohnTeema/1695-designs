@@ -1,23 +1,21 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Button from "@/components/ui/Button";
 
 export default function HeroContent() {
-  const ref = useRef<HTMLDivElement>(null);
+  const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce || sessionStorage.getItem("hero-played")) return;
 
     sessionStorage.setItem("hero-played", "1");
-    requestAnimationFrame(() => {
-      ref.current?.classList.add("hero-animate");
-    });
+    setAnimated(true);
   }, []);
 
   return (
-    <div ref={ref} className="max-w-2xl">
+    <div className={`max-w-2xl${animated ? " hero-animate" : ""}`}>
       <h1 className="font-heading font-semibold text-warm-white leading-[1.05] mb-8">
         <span className="hero-word hero-word-1 block text-[clamp(2.8rem,5vw,5rem)]">
           Design.
