@@ -2,7 +2,7 @@ import Container from "@/components/ui/Container";
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-warm-white">
+    <section id="testimonials" className="py-28 md:py-44 bg-warm-white">
       <Container>
         <div className="reveal max-w-xl mb-16 md:mb-20">
           <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1]">

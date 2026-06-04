@@ -3,7 +3,7 @@ import Button from "@/components/ui/Button";
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-charcoal">
+    <section id="services" className="py-28 md:py-44 bg-charcoal">
       <Container>
         {/* Header */}
         <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 md:mb-20">

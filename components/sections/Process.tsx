@@ -25,38 +25,50 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 md:py-32 bg-warm-white">
+    <section id="process" className="py-28 md:py-44 bg-warm-white">
       <Container>
-        {/* Header */}
-        <div className="reveal max-w-xl mb-16 md:mb-20">
+        <div className="reveal mb-16 md:mb-24 max-w-xl">
           <h2 className="font-heading font-semibold text-charcoal text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
             How We Work
           </h2>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-stone">
-          {steps.map((step, i) => (
-            <div
-              key={step.number}
-              className={`reveal reveal-delay-${i + 1} p-10 md:p-12 ${
-                i % 2 === 0 ? "md:border-r border-stone" : ""
-              } ${i < 2 ? "border-b border-stone" : ""}`}
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <span className="font-heading text-5xl font-medium text-charcoal/10">
+        {/* Staggered horizontal timeline — stepping-stone rhythm on desktop */}
+        <div className="relative">
+          {/* Thin gold connector line (desktop) */}
+          <div
+            className="hidden md:block absolute top-2.5 left-0 right-0 h-px bg-gold/20 z-0"
+            aria-hidden="true"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 lg:gap-10">
+            {steps.map((step, i) => (
+              <div
+                key={step.number}
+                className={`reveal reveal-delay-${i + 1} relative z-10 ${
+                  i % 2 === 1 ? "md:mt-20" : ""
+                }`}
+              >
+                {/* Timeline dot */}
+                <div
+                  className="w-5 h-5 rounded-full border-2 border-gold/50 bg-warm-white flex items-center justify-center mb-8"
+                  aria-hidden="true"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-gold/70" />
+                </div>
+
+                <span className="font-heading font-bold text-charcoal/[0.07] text-[4.5rem] leading-none block mb-5 select-none">
                   {step.number}
                 </span>
-                <div className="h-px flex-1 bg-gold/30" aria-hidden="true" />
+                <h3 className="font-heading font-semibold text-charcoal text-xl mb-3">
+                  {step.title}
+                </h3>
+                <p className="font-body text-charcoal/70 leading-relaxed text-sm">
+                  {step.description}
+                </p>
               </div>
-              <h3 className="font-heading font-semibold text-charcoal text-2xl mb-4">
-                {step.title}
-              </h3>
-              <p className="font-body text-charcoal/70 leading-relaxed">
-                {step.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </Container>
     </section>

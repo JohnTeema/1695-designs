@@ -10,7 +10,7 @@ export default function Contact({
   whatsappNumber: string;
 }) {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-warm-white">
+    <section id="contact" className="py-28 md:py-44 bg-warm-white">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Text */}

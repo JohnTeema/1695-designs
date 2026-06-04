@@ -3,7 +3,7 @@ import Button from "@/components/ui/Button";
 
 export default function CTA() {
   return (
-    <section id="cta" className="py-24 md:py-32 bg-charcoal relative overflow-hidden">
+    <section id="cta" className="py-28 md:py-44 bg-charcoal relative overflow-hidden">
       <div className="absolute left-0 top-0 w-full h-px bg-gold/20" aria-hidden="true" />
       <div className="absolute left-0 bottom-0 w-full h-px bg-gold/20" aria-hidden="true" />
 

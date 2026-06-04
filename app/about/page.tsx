@@ -86,9 +86,10 @@ export default async function AboutPage() {
       </section>
 
       {/* ── Our Story ────────────────────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-warm-white">
+      <section className="py-28 md:py-44 bg-warm-white overflow-hidden">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Asymmetric: image 55%, text 45% offset down */}
+          <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-0 lg:gap-20 items-start">
             {/* Our Story image — from CMS, placeholder fallback */}
             <div className="relative aspect-[4/5] bg-stone overflow-hidden">
               <div
@@ -105,8 +106,8 @@ export default async function AboutPage() {
               <div className="absolute top-0 left-0 w-24 h-px bg-gold z-10" aria-hidden="true" />
             </div>
 
-            {/* Text */}
-            <div>
+            {/* Text — offset down for editorial asymmetry */}
+            <div className="lg:pt-24">
               <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
                 Our Story
               </p>
@@ -143,7 +144,7 @@ export default async function AboutPage() {
       </section>
 
       {/* ── What We Do ───────────────────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-charcoal">
+      <section className="py-28 md:py-40 bg-charcoal">
         <Container>
           <div className="max-w-xl mb-16">
             <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-6">
@@ -183,7 +184,7 @@ export default async function AboutPage() {
       </section>
 
       {/* ── Our Approach ─────────────────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-warm-white">
+      <section className="py-28 md:py-40 bg-warm-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -240,7 +241,7 @@ export default async function AboutPage() {
       </section>
 
       {/* ── Who We Work With ─────────────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-charcoal">
+      <section className="py-28 md:py-40 bg-charcoal">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
@@ -272,7 +273,7 @@ export default async function AboutPage() {
       </section>
 
       {/* ── Our Philosophy ───────────────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-warm-white">
+      <section className="py-28 md:py-40 bg-warm-white">
         <Container narrow>
           <div className="text-center">
             <p className="text-[11px] tracking-[0.25em] uppercase font-body font-medium text-gold mb-8">
@@ -299,7 +300,7 @@ export default async function AboutPage() {
       </section>
 
       {/* ── Why 1695 Designs ─────────────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-charcoal">
+      <section className="py-28 md:py-40 bg-charcoal">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -337,7 +338,7 @@ export default async function AboutPage() {
       </section>
 
       {/* ── Final statement (LIGHT) ──────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-warm-white">
+      <section className="py-28 md:py-40 bg-warm-white">
         <Container narrow>
           <div className="text-center">
             <p className="font-body text-charcoal/80 leading-relaxed text-lg max-w-2xl mx-auto">
@@ -350,7 +351,7 @@ export default async function AboutPage() {
       </section>
 
       {/* ── CTA (DARK) ───────────────────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-charcoal relative overflow-hidden">
+      <section className="py-28 md:py-40 bg-charcoal relative overflow-hidden">
         <div className="absolute left-0 top-0 w-full h-px bg-gold/20" aria-hidden="true" />
         <Container narrow>
           <div className="text-center">

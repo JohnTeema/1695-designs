@@ -27,7 +27,7 @@ export default function PortfolioTeaser({ projects = [] }: { projects?: Project[
   const hasProjects = featured.length > 0;
 
   return (
-    <section id="portfolio" className="py-24 md:py-32 bg-stone/30">
+    <section id="portfolio" className="py-28 md:py-44 bg-stone/30">
       <Container>
         {/* Header */}
         <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">

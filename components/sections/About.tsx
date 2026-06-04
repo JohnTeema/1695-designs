@@ -16,17 +16,19 @@ export default function About({ aboutImage }: { aboutImage?: SanityImage | null 
   const hasImage = Boolean(aboutImage?.asset);
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-warm-white">
+    <section id="about" className="py-28 md:py-44 bg-warm-white overflow-hidden">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Image — from CMS, with a tasteful placeholder fallback */}
+        {/* Asymmetric magazine-spread — image dominates at 55%, text floats offset */}
+        <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-0 lg:gap-16 xl:gap-24 items-start">
+
+          {/* Image — 55% width, tall 4:5 ratio */}
           <div className="reveal relative aspect-[4/5] bg-stone order-2 lg:order-1 overflow-hidden">
             {hasImage ? (
               <Image
-                src={urlFor(aboutImage!).width(900).height(1125).quality(80).url()}
+                src={urlFor(aboutImage!).width(1000).height(1250).quality(80).url()}
                 alt={aboutImage!.alt ?? "1695 Designs interior project"}
                 fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 55vw"
                 className="object-cover"
               />
             ) : (
@@ -46,8 +48,8 @@ export default function About({ aboutImage }: { aboutImage?: SanityImage | null 
             <div className="absolute top-0 left-0 w-24 h-px bg-gold" aria-hidden="true" />
           </div>
 
-          {/* Text */}
-          <div className="reveal reveal-delay-2 order-1 lg:order-2">
+          {/* Text — offset down to create editorial tension against the tall image */}
+          <div className="reveal reveal-delay-2 order-1 lg:order-2 lg:pt-28">
             <h2 className="font-heading font-bold text-charcoal text-[clamp(2.2rem,4vw,3.5rem)] leading-[1.05] mb-8">
               We design spaces that work as beautifully as they look
             </h2>
@@ -63,7 +65,6 @@ export default function About({ aboutImage }: { aboutImage?: SanityImage | null 
               </p>
             </div>
 
-            {/* Key highlights */}
             <div className="mt-8 flex flex-wrap gap-2">
               {highlights.map((item) => (
                 <span
@@ -75,7 +76,7 @@ export default function About({ aboutImage }: { aboutImage?: SanityImage | null 
               ))}
             </div>
 
-            <div className="mt-10">
+            <div className="mt-12">
               <Button href="/about" variant="outline">
                 Our Story
               </Button>

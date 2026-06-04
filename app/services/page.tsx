@@ -223,7 +223,7 @@ export default async function ServicesPage() {
       </section>
 
       {/* ── Service 1 — Interior Design ──────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-warm-white">
+      <section className="py-28 md:py-40 bg-warm-white">
         <Container>
           {/* Section header */}
           <div className="flex items-start gap-6 mb-14">
@@ -240,8 +240,8 @@ export default async function ServicesPage() {
             </div>
           </div>
 
-          {/* Body */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-14">
+          {/* Body — Interior Design flagship: image dominates at 60% */}
+          <div className="grid grid-cols-1 lg:grid-cols-[40fr_60fr] gap-16 items-start mb-14">
             <div className="space-y-4 font-body text-charcoal/75 leading-relaxed">
               <p>
                 Every successful space begins with thoughtful design. Our interior design
@@ -283,7 +283,7 @@ export default async function ServicesPage() {
       </section>
 
       {/* ── Service 2 — Furniture Manufacturing ──────────────────────────── */}
-      <section className="py-24 md:py-32 bg-charcoal">
+      <section className="py-28 md:py-40 bg-charcoal">
         <Container>
           <div className="flex items-start gap-6 mb-14">
             <span className="font-heading text-5xl font-medium text-warm-white/10 leading-none mt-1 select-none">
@@ -299,7 +299,8 @@ export default async function ServicesPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-14">
+          {/* Furniture Manufacturing — equal weight, image leads */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-14">
             {/* Furniture Manufacturing image — from CMS, placeholder fallback */}
             <div className="relative aspect-[4/3] bg-charcoal/50 border border-white/10 overflow-hidden order-2 lg:order-1">
               <CmsImage
@@ -333,7 +334,7 @@ export default async function ServicesPage() {
       </section>
 
       {/* ── Service 3 — Furniture Supply ─────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-warm-white">
+      <section className="py-28 md:py-40 bg-warm-white">
         <Container>
           <div className="flex items-start gap-6 mb-14">
             <span className="font-heading text-5xl font-medium text-charcoal/10 leading-none mt-1 select-none">
@@ -349,7 +350,8 @@ export default async function ServicesPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-14">
+          {/* Furniture Supply — text-dominant at 58% */}
+          <div className="grid grid-cols-1 lg:grid-cols-[58fr_42fr] gap-16 items-start mb-14">
             <div className="space-y-4 font-body text-charcoal/75 leading-relaxed">
               <p>
                 We source and supply carefully selected furniture, décor, and interior
@@ -385,7 +387,7 @@ export default async function ServicesPage() {
       </section>
 
       {/* ── Service 4 — Design & Build ───────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-charcoal">
+      <section className="py-28 md:py-40 bg-charcoal">
         <Container>
           <div className="flex items-start gap-6 mb-14">
             <span className="font-heading text-5xl font-medium text-warm-white/10 leading-none mt-1 select-none">
@@ -457,7 +459,7 @@ export default async function ServicesPage() {
       </section>
 
       {/* ── Why Clients Choose 1695 Designs ──────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-charcoal">
+      <section className="py-28 md:py-40 bg-charcoal">
         <Container>
           <div className="max-w-xl mb-16">
             <h2 className="font-heading font-semibold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.1]">
@@ -485,7 +487,7 @@ export default async function ServicesPage() {
       </section>
 
       {/* ── Closing CTA ──────────────────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-charcoal relative overflow-hidden">
+      <section className="py-28 md:py-40 bg-charcoal relative overflow-hidden">
         <div className="absolute left-0 top-0 w-full h-px bg-gold/20" aria-hidden="true" />
         <Container narrow>
           <div className="text-center">
