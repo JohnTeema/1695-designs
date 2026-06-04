@@ -45,7 +45,7 @@ export default async function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[40vh] flex items-end bg-charcoal overflow-hidden">
+      <section className="section-gold-rule relative min-h-[40vh] flex items-end bg-charcoal overflow-hidden">
         <div
           className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/80"
           aria-hidden="true"

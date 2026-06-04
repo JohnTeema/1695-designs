@@ -11,7 +11,7 @@ const points = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-28 md:py-44 bg-charcoal">
+    <section id="why-us" className="section-gold-rule py-28 md:py-44 bg-charcoal">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 

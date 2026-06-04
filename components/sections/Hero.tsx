@@ -15,7 +15,7 @@ export default function Hero({ heroImages = [] }: { heroImages?: SanityImage[] }
   const hasImages = images.length > 0;
 
   return (
-    <section className="relative min-h-screen flex items-center bg-charcoal overflow-hidden">
+    <section className="section-gold-rule relative min-h-screen flex items-center bg-charcoal overflow-hidden">
       {hasImages && <HeroBackground images={images} />}
 
       <div
