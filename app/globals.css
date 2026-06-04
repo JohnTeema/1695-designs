@@ -75,18 +75,15 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(0);
   }
 
-  /* Heading clip: text emerges upward from an invisible edge */
+  /* Heading: slides up from 40px with expo-out easing — more dramatic than generic reveal */
   .reveal-heading {
-    clip-path: inset(0 0 100% 0);
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(40px);
     transition:
-      clip-path 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-      opacity 0.4s ease-out,
-      transform 0.65s ease-out;
+      opacity 0.6s ease-out,
+      transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .reveal-heading.revealed {
-    clip-path: inset(0 0 0% 0);
     opacity: 1;
     transform: translateY(0);
   }
