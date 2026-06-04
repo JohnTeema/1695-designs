@@ -59,15 +59,15 @@ export default function ProductGrid({ products }: { products: Product[] }) {
             <Link
               key={product._id}
               href={`/furniture/${product.slug.current}`}
-              className="group block"
+              className="card-lift group block"
             >
-              <div className="relative aspect-square bg-stone overflow-hidden mb-5">
+              <div className="card-img relative aspect-square bg-stone overflow-hidden mb-5">
                 {product.coverImage?.asset ? (
                   <Image
                     src={urlFor(product.coverImage).width(600).height(600).url()}
                     alt={product.coverImage.alt ?? product.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover"
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -76,11 +76,11 @@ export default function ProductGrid({ products }: { products: Product[] }) {
                     </p>
                   </div>
                 )}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className="card-gold-line absolute bottom-0 left-0 right-0 h-px bg-gold z-10" />
               </div>
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="font-heading font-medium text-charcoal text-xl mb-1 group-hover:text-gold transition-colors duration-300">
+                  <h3 className="card-title font-heading font-medium text-charcoal text-xl mb-1 group-hover:text-gold transition-colors duration-300">
                     {product.title}
                   </h3>
                   <p className="text-[11px] tracking-[0.1em] uppercase font-body text-grey">

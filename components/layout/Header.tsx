@@ -91,7 +91,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-[11px] tracking-[0.18em] uppercase font-body font-medium hover:text-gold transition-colors duration-300 ${
+              className={`nav-link text-[11px] tracking-[0.18em] uppercase font-body font-medium hover:text-gold transition-colors duration-300 ${
                 useLightText ? "text-stone" : "text-charcoal"
               }`}
             >

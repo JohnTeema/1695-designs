@@ -60,15 +60,15 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
             <Link
               key={project._id}
               href={`/portfolio/${project.slug.current}`}
-              className="group block"
+              className="card-lift group block"
             >
-              <div className="relative aspect-[4/3] bg-stone overflow-hidden mb-5">
+              <div className="card-img relative aspect-[4/3] bg-stone overflow-hidden mb-5">
                 {project.coverImage?.asset ? (
                   <Image
                     src={urlFor(project.coverImage).width(800).height(600).url()}
                     alt={project.coverImage.alt ?? project.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover"
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -77,14 +77,14 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
                     </p>
                   </div>
                 )}
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-4 left-4 z-10">
                   <span className="text-[10px] tracking-[0.15em] uppercase font-body font-medium bg-warm-white/90 text-charcoal px-3 py-1.5">
                     {project.category}
                   </span>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className="card-gold-line absolute bottom-0 left-0 right-0 h-px bg-gold z-10" />
               </div>
-              <h3 className="font-heading font-medium text-charcoal text-xl mb-1 group-hover:text-gold transition-colors duration-300">
+              <h3 className="card-title font-heading font-medium text-charcoal text-xl mb-1 group-hover:text-gold transition-colors duration-300">
                 {project.title}
               </h3>
               {(project.location || project.completionDate) && (
