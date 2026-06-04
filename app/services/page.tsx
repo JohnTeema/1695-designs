@@ -498,11 +498,7 @@ export default async function ServicesPage() {
               bring your vision to life. Let&apos;s create a space that reflects your ambition,
               enhances experience, and stands the test of time.
             </p>
-            <Button
-              href="/contact"
-              variant="outline"
-              className="border-warm-white text-warm-white hover:border-gold hover:text-gold"
-            >
+            <Button href="/contact" variant="primary">
               Request a Consultation
             </Button>
           </div>

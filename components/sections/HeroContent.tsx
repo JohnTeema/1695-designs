@@ -16,7 +16,7 @@ export default function HeroContent() {
 
   return (
     <div className={`max-w-2xl${animated ? " hero-animate" : ""}`}>
-      <h1 className="font-heading font-extrabold text-warm-white uppercase tracking-[-0.03em] leading-[0.95] mb-10">
+      <h1 className="font-heading font-extrabold text-gold uppercase tracking-[-0.03em] leading-[0.95] mb-10">
         <span className="hero-word hero-word-1 block text-[clamp(3.5rem,9vw,8rem)]">
           Design.
         </span>
@@ -28,7 +28,7 @@ export default function HeroContent() {
         </span>
       </h1>
 
-      <p className="hero-sub font-body text-stone text-lg leading-relaxed mb-10 max-w-xl">
+      <p className="hero-sub font-body text-warm-white/80 text-lg leading-relaxed mb-10 max-w-xl">
         1695 Designs is a premium interior design and furniture company creating
         functional, refined, and fully executed spaces for corporate and hospitality
         clients — from concept to completion.
@@ -37,15 +37,14 @@ export default function HeroContent() {
       <div className="hero-cta flex flex-col sm:flex-row gap-4">
         <Button
           href="/contact"
-          variant="outline"
-          className="border-warm-white text-warm-white hover:border-gold hover:text-gold"
+          variant="primary"
         >
           Request a Consultation
         </Button>
         <Button
           href="/portfolio"
           variant="ghost"
-          className="text-stone hover:text-gold"
+          className="text-warm-white/70 hover:text-gold"
         >
           View Our Portfolio →
         </Button>

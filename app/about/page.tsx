@@ -355,11 +355,7 @@ export default async function AboutPage() {
         <Container narrow>
           <div className="text-center">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="/contact"
-                variant="outline"
-                className="border-warm-white text-warm-white hover:border-gold hover:text-gold"
-              >
+              <Button href="/contact" variant="primary">
                 Request a Consultation
               </Button>
               <Button
