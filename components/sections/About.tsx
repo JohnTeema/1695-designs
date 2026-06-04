@@ -21,8 +21,8 @@ export default function About({ aboutImage }: { aboutImage?: SanityImage | null 
         {/* Asymmetric magazine-spread — image dominates at 55%, text floats offset */}
         <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-0 lg:gap-16 xl:gap-24 items-start">
 
-          {/* Image — 55% width, tall 4:5 ratio */}
-          <div className="reveal relative aspect-[4/5] bg-stone order-2 lg:order-1 overflow-hidden">
+          {/* Image — 55% width, tall 4:5 ratio, comes in on a separate 300ms track */}
+          <div className="reveal reveal-seq-image relative aspect-[4/5] bg-stone order-2 lg:order-1 overflow-hidden">
             {hasImage ? (
               <Image
                 src={urlFor(aboutImage!).width(1000).height(1250).quality(80).url()}
