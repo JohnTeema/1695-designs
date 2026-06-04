@@ -27,13 +27,13 @@ export default function Footer({
           {/* Brand — full logo (dark wordmark) on a warm-white panel so it
               stays legible on the charcoal footer */}
           <div>
-            <div className="mb-6 inline-block bg-warm-white rounded-md p-4">
+            <div className="mb-6 inline-block bg-warm-white rounded-md p-5">
               <Image
                 src="/1695-logo-full-transparent.png"
                 alt="1695 Designs"
-                width={150}
-                height={168}
-                className="h-auto w-[130px] md:w-[150px]"
+                width={170}
+                height={190}
+                className="h-auto w-[150px] md:w-[170px]"
               />
             </div>
             <p className="text-grey text-sm font-body leading-relaxed max-w-xs">

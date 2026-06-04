@@ -62,22 +62,22 @@ export default function Header() {
           <Image
             src="/1695-logo-icon-transparent.png"
             alt="1695 Designs"
-            width={42}
-            height={41}
+            width={52}
+            height={51}
             priority
-            className="h-10 w-auto"
+            className="h-12 w-auto"
           />
-          <span className="flex flex-col leading-none">
+          <span className="flex flex-col leading-none gap-0.5">
             <span
-              className={`font-heading text-xl font-semibold tracking-wide transition-colors duration-500 ${
+              className={`font-heading text-2xl font-bold tracking-wide transition-colors duration-500 ${
                 useLightText ? "text-warm-white" : "text-charcoal"
               }`}
             >
               1695
             </span>
             <span
-              className={`text-[9px] tracking-[0.3em] uppercase font-body transition-colors duration-500 ${
-                useLightText ? "text-stone" : "text-grey"
+              className={`text-[10px] tracking-[0.35em] uppercase font-body font-medium transition-colors duration-500 ${
+                useLightText ? "text-stone" : "text-charcoal/60"
               }`}
             >
               Designs
