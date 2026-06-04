@@ -22,8 +22,17 @@ export default function ScrollRevealProvider() {
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
 
+    const selector = [
+      ".reveal",
+      ".reveal-heading",
+      ".reveal-eyebrow",
+      ".reveal-body",
+    ]
+      .map((c) => `${c}:not(.revealed)`)
+      .join(", ");
+
     document
-      .querySelectorAll<Element>(".reveal:not(.revealed)")
+      .querySelectorAll<Element>(selector)
       .forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();

@@ -16,11 +16,11 @@ export default function WhyUs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
           {/* Heading column */}
-          <div className="reveal">
-            <h2 className="font-heading font-bold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.05] tracking-[-0.02em]">
+          <div>
+            <h2 className="reveal-heading font-heading font-bold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.05] tracking-[-0.02em]">
               Why 1695 Designs
             </h2>
-            <p className="font-body text-grey mt-6 leading-relaxed max-w-xs">
+            <p className="reveal-body reveal-seq-body font-body text-grey mt-6 leading-relaxed max-w-xs">
               What makes us different is not just what we design but how we deliver it.
             </p>
           </div>

@@ -61,21 +61,67 @@ h1, h2, h3, h4, h5, h6 {
 .hero-animate .hero-sub    { animation-delay: 4.4s; }
 .hero-animate .hero-cta    { animation-delay: 4.9s; }
 
-/* ─── Scroll reveal ──────────────────────────────────────────────────────── */
+/* ─── Scroll reveal system ───────────────────────────────────────────────── */
 @media (prefers-reduced-motion: no-preference) {
+
+  /* Generic: fade + slide up */
   .reveal {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transform: translateY(28px);
+    transition: opacity 0.55s ease-out, transform 0.55s ease-out;
   }
   .reveal.revealed {
     opacity: 1;
     transform: translateY(0);
   }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* Heading clip: text emerges upward from an invisible edge */
+  .reveal-heading {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      clip-path 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.4s ease-out,
+      transform 0.65s ease-out;
+  }
+  .reveal-heading.revealed {
+    clip-path: inset(0 0 0% 0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Eyebrow label: slides in from the left */
+  .reveal-eyebrow {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  }
+  .reveal-eyebrow.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Body text: clean fade only, no movement */
+  .reveal-body {
+    opacity: 0;
+    transition: opacity 0.55s ease-out;
+  }
+  .reveal-body.revealed {
+    opacity: 1;
+  }
+
+  /* Stagger delays */
+  .reveal-delay-1  { transition-delay: 0.10s; }
+  .reveal-delay-2  { transition-delay: 0.20s; }
+  .reveal-delay-3  { transition-delay: 0.30s; }
+  .reveal-delay-4  { transition-delay: 0.40s; }
+
+  /* Named stagger sequence: eyebrow → heading → body */
+  .reveal-seq-eyebrow  { transition-delay: 0s;    }
+  .reveal-seq-heading  { transition-delay: 0.2s;  }
+  .reveal-seq-body     { transition-delay: 0.4s;  }
+  .reveal-seq-image    { transition-delay: 0.3s;  }
 }
 
 /* ─── Card hover — deep lift with premium easing ────────────────────────── */

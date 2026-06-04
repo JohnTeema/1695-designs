@@ -8,10 +8,10 @@ export default function Services() {
         {/* Header */}
         <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 md:mb-20">
           <div>
-            <h2 className="font-heading font-bold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="reveal-heading font-heading font-bold text-warm-white text-[clamp(2rem,4vw,3rem)] leading-[1.05] tracking-[-0.02em]">
               What We Do
             </h2>
-            <p className="font-body text-grey mt-4 max-w-md">
+            <p className="reveal-body reveal-seq-body font-body text-grey mt-4 max-w-md">
               1695 Designs operates across three integrated areas.
             </p>
           </div>

@@ -49,11 +49,11 @@ export default function About({ aboutImage }: { aboutImage?: SanityImage | null 
           </div>
 
           {/* Text — offset down to create editorial tension against the tall image */}
-          <div className="reveal reveal-delay-2 order-1 lg:order-2 lg:pt-28">
-            <h2 className="font-heading font-bold text-charcoal text-[clamp(2.2rem,4vw,3.5rem)] leading-[1.05] mb-8">
+          <div className="order-1 lg:order-2 lg:pt-28">
+            <h2 className="reveal-heading reveal-seq-heading font-heading font-bold text-charcoal text-[clamp(2.2rem,4vw,3.5rem)] leading-[1.05] mb-8">
               We design spaces that work as beautifully as they look
             </h2>
-            <div className="space-y-5 font-body text-charcoal/80 leading-relaxed">
+            <div className="reveal-body reveal-seq-body space-y-5 font-body text-charcoal/80 leading-relaxed">
               <p>
                 1695 Designs is an interior design and furniture company specializing in
                 corporate and hospitality environments. We combine strategic design thinking
@@ -65,7 +65,7 @@ export default function About({ aboutImage }: { aboutImage?: SanityImage | null 
               </p>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="reveal-body reveal-seq-body mt-8 flex flex-wrap gap-2">
               {highlights.map((item) => (
                 <span
                   key={item}
