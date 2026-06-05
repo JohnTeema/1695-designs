@@ -91,7 +91,7 @@ export default async function AboutPage() {
           {/* Asymmetric: image 55%, text 45% offset down */}
           <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-0 lg:gap-20 items-start">
             {/* Our Story image — from CMS, placeholder fallback */}
-            <div className="relative aspect-[4/5] bg-stone overflow-hidden">
+            <div className="img-breathe relative aspect-[4/5] bg-stone overflow-hidden">
               <div
                 className="absolute inset-0 bg-gradient-to-br from-stone/60 to-charcoal/10"
                 aria-hidden="true"
@@ -197,7 +197,7 @@ export default async function AboutPage() {
 
               {/* Optional supporting image — only shows when set in the CMS */}
               {images?.aboutApproachImage?.asset && (
-                <div className="relative aspect-[4/3] bg-stone overflow-hidden mt-10">
+                <div className="img-breathe relative aspect-[4/3] bg-stone overflow-hidden mt-10">
                   <CmsImage
                     image={images.aboutApproachImage}
                     fallbackAlt="1695 Designs interior project"

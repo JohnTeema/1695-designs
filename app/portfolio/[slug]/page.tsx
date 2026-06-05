@@ -50,7 +50,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   return (
     <>
       {/* Hero image */}
-      <div className="relative h-[60vh] md:h-[75vh] bg-charcoal mt-20">
+      <div className="img-breathe relative h-[60vh] md:h-[75vh] bg-charcoal mt-20">
         {project.images?.[0]?.asset ? (
           <Image
             src={urlFor(project.images[0]).width(1600).url()}
@@ -135,7 +135,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               {project.images.slice(1).map(
                 (img: { asset?: { _ref: string }; alt?: string }, i: number) =>
                   img?.asset && (
-                    <div key={i} className="relative aspect-[4/3] bg-stone overflow-hidden">
+                    <div key={i} className="img-breathe relative aspect-[4/3] bg-stone overflow-hidden">
                       <Image
                         src={urlFor(img).width(900).url()}
                         alt={img.alt ?? `${project.title} — image ${i + 2}`}

@@ -76,13 +76,13 @@ export default async function BlogPage() {
                   className="group block"
                 >
                   {/* Cover */}
-                  <div className="relative aspect-[16/9] bg-stone overflow-hidden mb-5">
+                  <div className="img-breathe relative aspect-[16/9] bg-stone overflow-hidden mb-5">
                     {post.coverImage?.asset ? (
                       <Image
                         src={urlFor(post.coverImage).width(700).height(394).url()}
                         alt={post.coverImage.alt ?? post.title}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="object-cover"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">

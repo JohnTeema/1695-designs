@@ -65,7 +65,7 @@ export default async function ProductDetailPage({ params }: Props) {
               <div className="space-y-3">
                 {product.gallery?.[0]?.asset ? (
                   <>
-                    <div className="relative aspect-square bg-stone overflow-hidden">
+                    <div className="img-breathe relative aspect-square bg-stone overflow-hidden">
                       <Image
                         src={urlFor(product.gallery[0]).width(800).url()}
                         alt={product.gallery[0].alt ?? product.title}
@@ -84,7 +84,7 @@ export default async function ProductDetailPage({ params }: Props) {
                             img?.asset && (
                               <div
                                 key={i}
-                                className="relative aspect-square bg-stone overflow-hidden"
+                                className="img-breathe relative aspect-square bg-stone overflow-hidden"
                               >
                                 <Image
                                   src={urlFor(img).width(200).url()}

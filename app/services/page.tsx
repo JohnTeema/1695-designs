@@ -259,7 +259,7 @@ export default async function ServicesPage() {
             </div>
 
             {/* Interior Design image — from CMS, placeholder fallback */}
-            <div className="relative aspect-[4/3] bg-stone overflow-hidden">
+            <div className="img-breathe relative aspect-[4/3] bg-stone overflow-hidden">
               <CmsImage
                 image={images?.interiorDesignImage}
                 fallbackAlt="Interior design by 1695 Designs"
@@ -302,7 +302,7 @@ export default async function ServicesPage() {
           {/* Furniture Manufacturing — equal weight, image leads */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-14">
             {/* Furniture Manufacturing image — from CMS, placeholder fallback */}
-            <div className="relative aspect-[4/3] bg-charcoal/50 border border-white/10 overflow-hidden order-2 lg:order-1">
+            <div className="img-breathe relative aspect-[4/3] bg-charcoal/50 border border-white/10 overflow-hidden order-2 lg:order-1">
               <CmsImage
                 image={images?.furnitureManufacturingImage}
                 fallbackAlt="Custom furniture manufacturing by 1695 Designs"
@@ -367,7 +367,7 @@ export default async function ServicesPage() {
             </div>
 
             {/* Furniture Supply image — from CMS, placeholder fallback */}
-            <div className="relative aspect-[4/3] bg-stone overflow-hidden">
+            <div className="img-breathe relative aspect-[4/3] bg-stone overflow-hidden">
               <CmsImage
                 image={images?.furnitureSupplyImage}
                 fallbackAlt="Curated furniture supply by 1695 Designs"
@@ -405,7 +405,7 @@ export default async function ServicesPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
             {/* Design & Build image — from CMS, placeholder fallback (dark) */}
-            <div className="relative aspect-[4/3] bg-charcoal/50 border border-white/10 overflow-hidden">
+            <div className="img-breathe relative aspect-[4/3] bg-charcoal/50 border border-white/10 overflow-hidden">
               <CmsImage
                 image={images?.designBuildImage}
                 fallbackAlt="Design and build project delivery by 1695 Designs"

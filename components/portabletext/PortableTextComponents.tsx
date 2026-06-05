@@ -62,7 +62,7 @@ export const portableTextComponents: PortableTextComponents = {
       if (!value?.asset) return null;
       return (
         <figure className="my-10">
-          <div className="relative aspect-[16/9] overflow-hidden bg-stone">
+          <div className="img-breathe relative aspect-[16/9] overflow-hidden bg-stone">
             <Image
               src={urlFor(value).width(1200).url()}
               alt={value.alt ?? ""}

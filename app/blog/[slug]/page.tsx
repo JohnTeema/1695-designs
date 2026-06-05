@@ -48,7 +48,7 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       {/* Cover image */}
       {post.coverImage?.asset && (
-        <div className="relative h-[50vh] md:h-[60vh] bg-charcoal mt-20">
+        <div className="img-breathe relative h-[50vh] md:h-[60vh] bg-charcoal mt-20">
           <Image
             src={urlFor(post.coverImage).width(1600).url()}
             alt={post.coverImage.alt ?? post.title}
