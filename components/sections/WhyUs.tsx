@@ -30,14 +30,14 @@ export default function WhyUs() {
             {points.map((point, i) => (
               <div
                 key={point}
-                className={`flex items-start gap-4 py-5 border-t border-white/10 ${
+                className={`why-row flex items-start gap-4 py-5 border-t border-white/10 ${
                   i % 2 === 1 ? "sm:mt-12" : ""
                 }`}
               >
-                <span className="font-heading font-bold text-gold/30 text-sm shrink-0 mt-0.5 leading-none tracking-widest">
+                <span className="why-num font-heading font-bold text-gold/30 text-sm shrink-0 mt-0.5 leading-none tracking-widest">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="font-body text-stone text-sm leading-relaxed">{point}</span>
+                <span className="why-label font-body text-stone text-sm leading-relaxed">{point}</span>
               </div>
             ))}
           </div>
