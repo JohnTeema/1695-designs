@@ -12,21 +12,23 @@ export default function Testimonials() {
 
         {/* Placeholder testimonial — real quotes to be added in Phase 2 */}
         <div className="reveal reveal-delay-1 max-w-2xl">
-          <div className="p-8 md:p-12 bg-stone/20">
-            <div
-              className="text-gold/50 font-heading text-6xl leading-none mb-6 select-none"
+          <div className="testimonial-card relative overflow-hidden p-8 md:p-12 bg-stone/20">
+            <span
               aria-hidden="true"
+              className="testimonial-mark pointer-events-none select-none absolute -top-6 left-4 md:-top-8 md:left-6 font-heading text-gold/10 text-[11rem] md:text-[16rem] leading-none"
             >
-              "
-            </div>
-            <blockquote className="font-body text-charcoal/80 leading-relaxed text-lg mb-8">
-              1695 Designs delivered a space that completely transformed how our team
-              works and how our clients experience our office.
-            </blockquote>
-            <div className="border-t border-stone pt-6">
-              <p className="text-[11px] tracking-[0.1em] uppercase font-body text-grey">
-                Corporate Client
-              </p>
+              &ldquo;
+            </span>
+            <div className="relative z-10">
+              <blockquote className="font-body text-charcoal/80 leading-relaxed text-lg mb-8">
+                1695 Designs delivered a space that completely transformed how our team
+                works and how our clients experience our office.
+              </blockquote>
+              <div className="border-t border-stone pt-6">
+                <p className="text-[11px] tracking-[0.1em] uppercase font-body text-grey">
+                  Corporate Client
+                </p>
+              </div>
             </div>
           </div>
         </div>
